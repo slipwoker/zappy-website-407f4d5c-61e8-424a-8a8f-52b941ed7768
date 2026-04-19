@@ -245,6 +245,313 @@
     <script src="https://cdn.jsdelivr.net/npm/vanilla-cookieconsent@3/dist/cookieconsent.umd.js"></script>
     <!-- Mickidum Accessibility Toolbar -->
     <script src="https://cdn.jsdelivr.net/gh/mickidum/acc_toolbar/acctoolbar/acctoolbar.min.js"></script>
+
+<style data-zappy-section-v2-css="true">
+/* V2 Regenerated Section CSS */
+.index-hero-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: visible;
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  padding-bottom: 72px;
+}
+
+.index-hero-section .index-hero-bg-wrapper {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.index-hero-section .index-hero-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--bg-dark);
+  z-index: 0;
+}
+
+.index-hero-section .index-hero-scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background-image:
+    linear-gradient(135deg, rgba(15,23,42,0.92) 0%, rgba(15,23,42,0.72) 50%, rgba(15,23,42,0.55) 100%),
+    linear-gradient(to top, rgba(15,23,42,0.85) 0%, transparent 60%);
+}
+
+.index-hero-section .index-hero-content-wrapper {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 160px 48px 40px;
+  display: flex;
+  align-items: center;
+}
+
+.index-hero-section .index-hero-inner {
+  max-width: 680px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 28px;
+}
+
+/* Eyebrow tags */
+.index-hero-section .index-hero-eyebrow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.index-hero-section .index-hero-tag {
+  font-family: 'Heebo', Inter, sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  opacity: 0.92;
+}
+
+.index-hero-section .index-hero-tag-sep {
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: var(--secondary);
+  opacity: 0.5;
+  vertical-align: middle;
+}
+
+/* H1 */
+.index-hero-section .index-hero-h1 {
+  font-family: 'Noto Serif Hebrew', serif;
+  font-size: 58px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.06;
+  color: var(--text-light);
+  margin: 0;
+  text-align: right;
+  text-shadow: 0 2px 24px rgba(15,23,42,0.45);
+}
+
+.index-hero-section .index-hero-h1-accent {
+  color: var(--accent);
+  -webkit-text-fill-color: var(--accent);
+}
+
+/* H3 subtitle */
+.index-hero-section .index-hero-h3 {
+  font-family: 'Heebo', Inter, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.75;
+  color: var(--text-light);
+  opacity: 0.88;
+  margin: 0;
+  text-align: right;
+  max-width: 600px;
+  text-shadow: 0 1px 8px rgba(15,23,42,0.4);
+}
+
+/* CTA row */
+.index-hero-section .index-hero-cta-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.index-hero-section .index-hero-btn-primary {
+  display: inline-block;
+  background: #223F8E;
+  color: #FFFFFF;
+  font-family: 'Heebo', Inter, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1;
+  padding: 16px 40px;
+  border-radius: 4px;
+  border: none;
+  text-decoration: none;
+  box-shadow: 0 6px 20px rgba(34,63,142,0.38);
+  transition: all 0.25s ease;
+  white-space: nowrap;
+}
+
+.index-hero-section .index-hero-btn-primary:hover {
+  background: #2E5FAE;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 28px rgba(34,63,142,0.48);
+  color: #FFFFFF;
+}
+
+.index-hero-section .index-hero-btn-secondary {
+  display: inline-block;
+  background: transparent;
+  color: var(--text-light);
+  font-family: 'Heebo', Inter, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1;
+  padding: 15px 36px;
+  border-radius: 4px;
+  border: 1px solid rgba(250,249,246,0.38);
+  text-decoration: none;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+  backdrop-filter: blur(4px);
+}
+
+.index-hero-section .index-hero-btn-secondary:hover {
+  background: rgba(250,249,246,0.1);
+  border-color: rgba(250,249,246,0.65);
+  transform: translateY(-3px);
+  color: var(--text-light);
+}
+
+/* Proof strip */
+.index-hero-section .index-hero-proof-strip {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0;
+  margin-top: 8px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 6px;
+  padding: 18px 28px;
+  backdrop-filter: blur(6px);
+}
+
+.index-hero-section .index-hero-proof-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 0 24px;
+}
+
+.index-hero-section .index-hero-proof-num {
+  font-family: 'Noto Serif Hebrew', serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.index-hero-section .index-hero-proof-label {
+  font-family: 'Heebo', Inter, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-light);
+  opacity: 0.72;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.index-hero-section .index-hero-proof-divider {
+  width: 1px;
+  height: 40px;
+  background: rgba(255,255,255,0.18);
+  flex-shrink: 0;
+}
+
+/* Bottom divider */
+.index-hero-section .index-hero-divider-wrapper {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 72px;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.index-hero-section .index-hero-divider-wrapper svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* ─── Tablet ─── */
+@media (max-width: 1024px) {
+  .index-hero-section .index-hero-content-wrapper {
+    padding: 140px 32px 40px;
+  }
+  .index-hero-section .index-hero-h1 {
+    font-size: 44px;
+  }
+}
+
+/* ─── Mobile ─── */
+@media (max-width: 768px) {
+  .index-hero-section {
+    min-height: 100svh;
+    padding-bottom: 72px;
+  }
+  .index-hero-section .index-hero-content-wrapper {
+    padding: 110px 20px 32px;
+  }
+  .index-hero-section .index-hero-inner {
+    gap: 20px;
+    max-width: 100%;
+  }
+  .index-hero-section .index-hero-h1 {
+    font-size: 34px;
+    line-height: 1.12;
+  }
+  .index-hero-section .index-hero-h3 {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+  .index-hero-section .index-hero-cta-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    width: 100%;
+  }
+  .index-hero-section .index-hero-btn-primary,
+  .index-hero-section .index-hero-btn-secondary {
+    width: 100%;
+    text-align: center;
+    padding: 15px 24px;
+  }
+  .index-hero-section .index-hero-proof-strip {
+    padding: 14px 12px;
+    gap: 0;
+    width: 100%;
+    justify-content: space-between;
+  }
+  .index-hero-section .index-hero-proof-item {
+    padding: 0 8px;
+  }
+  .index-hero-section .index-hero-proof-num {
+    font-size: 22px;
+  }
+  .index-hero-section .index-hero-proof-label {
+    font-size: 11px;
+  }
+  .index-hero-section .index-hero-eyebrow {
+    gap: 8px;
+  }
+}
+</style>
     <link rel="stylesheet" href="/styles.css">
 
     <style id="zappy-dropdown-submenu-styles">
@@ -793,32 +1100,55 @@
 </script>
   
   <main>
-    <section class="index-hero-section" data-layout-spec="בית-hero" dir="rtl" data-hero-type="fullscreen-scrim">
-  <!-- Background Image -->
-  <div class="index-hero-bg">
-    <img data-hero-bg="true" data-placeholder="index-hero-image-1" data-context="Bright professional office environment, modern desk with an open laptop displaying analytics dashboards and digital marketing charts, clean minimalist workspace, natural light from large windows, elegant advisory atmosphere, corporate professional setting, Israeli business context, calm and trustworthy mood, high-end photography style" width="1200" height="700" src="/assets/site-index-hero-image-1.webp" alt="סביבת עבודה מקצועית עם מחשב נייד ואנליטיקה דיגיטלית">
+    <section class="index-hero-section" data-layout-spec="בית-hero" dir="rtl" data-hero-type="fullscreen-scrim" data-zappy-section="true">
+  <div class="index-hero-bg-wrapper">
+    <div class="index-hero-bg" style="background-image: url('assets/site-index-hero-image-1.webp'); background-size: cover; background-position: center; width: 100%; height: 100%;"></div>
+    <div class="index-hero-scrim"></div>
   </div>
 
-  <!-- Scrim Overlay -->
-  <div class="index-hero-scrim" aria-hidden="true"></div>
+  <div class="index-hero-content-wrapper">
+    <div class="index-hero-inner">
 
-  <!-- Content Card -->
-  <div class="index-hero-container">
-    <div class="index-hero-card">
-      <span class="index-hero-eyebrow">שיווק דיגיטלי | אסטרטגיה | טכנולוגיה</span>
-      <h1 class="index-hero-h1">צמיחה דיגיטלית מובנית<br>לעסקים מקצועיים</h1>
-      <h3 class="index-hero-subtitle">גלי שפיר – שותפה דיגיטלית לתוצאות. בניית אתרים, SEO, פרסום ממומן במטה ואסטרטגיה דיגיטלית לעורכי דין, מגשרים, הד-הנטרים וחברות גיוס.</h3>
-      <div class="index-hero-ctas">
+      <div class="index-hero-eyebrow">
+        <span class="index-hero-tag">שיווק דיגיטלי</span>
+        <span class="index-hero-tag-sep" aria-hidden="true"></span>
+        <span class="index-hero-tag">אסטרטגיה</span>
+        <span class="index-hero-tag-sep" aria-hidden="true"></span>
+        <span class="index-hero-tag">טכנולוגיה</span>
+      </div>
+
+      <h1 class="index-hero-h1">צמיחה דיגיטלית מובנית<br><span class="index-hero-h1-accent">לעסקים מקצועיים</span></h1>
+
+      <h3 class="index-hero-h3">גלי שפיר – שותפה דיגיטלית לתוצאות. בניית אתרים, SEO, פרסום ממומן במטה ואסטרטגיה דיגיטלית לעורכי דין, מגשרים, הד-הנטרים וחברות גיוס.</h3>
+
+      <div class="index-hero-cta-row">
         <a href="/contact" class="index-hero-btn-primary">דברו איתי</a>
         <a href="/services" class="index-hero-btn-secondary">השירותים שלי</a>
       </div>
+
+      <div class="index-hero-proof-strip">
+        <div class="index-hero-proof-item">
+          <span class="index-hero-proof-num">+150</span>
+          <span class="index-hero-proof-label">לקוחות מקצועיים</span>
+        </div>
+        <div class="index-hero-proof-divider" aria-hidden="true"></div>
+        <div class="index-hero-proof-item">
+          <span class="index-hero-proof-num">8+</span>
+          <span class="index-hero-proof-label">שנות ניסיון</span>
+        </div>
+        <div class="index-hero-proof-divider" aria-hidden="true"></div>
+        <div class="index-hero-proof-item">
+          <span class="index-hero-proof-num">×3</span>
+          <span class="index-hero-proof-label">גידול ממוצע בלידים</span>
+        </div>
+      </div>
+
     </div>
   </div>
 
-  <!-- Bottom Divider -->
   <div class="index-hero-divider-wrapper">
-    <svg data-no-icon-edit="true" aria-hidden="true" viewBox="0 0 1200 72" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0,72 L0,48 Q150,28 300,42 T600,32 Q750,24 900,38 T1200,28 L1200,72 Z" fill="var(--bg-light)"></path>
+    <svg data-no-icon-edit="true" aria-hidden="true" viewBox="0 0 1440 72" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,72 L0,42 Q120,28 240,38 T480,32 Q600,26 720,36 T960,30 Q1080,24 1200,34 T1440,38 L1440,72 Z" fill="var(--bg-light)"></path>
     </svg>
   </div>
 </section>
