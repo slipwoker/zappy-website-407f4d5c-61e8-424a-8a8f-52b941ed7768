@@ -245,6 +245,354 @@
     <script src="https://cdn.jsdelivr.net/npm/vanilla-cookieconsent@3/dist/cookieconsent.umd.js"></script>
     <!-- Mickidum Accessibility Toolbar -->
     <script src="https://cdn.jsdelivr.net/gh/mickidum/acc_toolbar/acctoolbar/acctoolbar.min.js"></script>
+
+<style data-zappy-section-v2-css="true">
+/* V2 Regenerated Section CSS */
+.services-intro-section {
+  background-color: #FBF9F6;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'%3E%3Cpath d='M0 4h8' stroke='%23E2DDD5' stroke-width='0.5' stroke-opacity='0.35'/%3E%3C/svg%3E");
+  color: var(--text-dark);
+  padding: 140px 24px 80px;
+  position: relative;
+  overflow: visible;
+  direction: rtl;
+}
+
+.services-intro-section .services-intro-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 72px;
+  align-items: start;
+  direction: rtl;
+}
+
+/* ── RIGHT COLUMN: CONTENT ── */
+.services-intro-section .services-intro-content {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.services-intro-section .services-intro-label {
+  display: inline-block;
+  font-family: 'Heebo', 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  border-inline-start: 3px solid var(--accent);
+  padding-inline-start: 10px;
+  line-height: 1.4;
+}
+
+.services-intro-section .services-intro-heading {
+  font-family: 'Noto Serif Hebrew', serif;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--text-dark);
+  margin: 0;
+}
+
+.services-intro-section .services-intro-body {
+  font-family: 'Heebo', 'Inter', sans-serif;
+  font-size: 16px;
+  line-height: 1.75;
+  color: var(--text-muted);
+  margin: 0;
+  max-width: 520px;
+}
+
+/* ── SERVICE LIST ── */
+.services-intro-section .services-intro-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-top: 1px solid #E2DDD5;
+}
+
+.services-intro-section .services-intro-item {
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  gap: 16px;
+  align-items: start;
+  padding: 20px 0;
+  border-bottom: 1px solid #E2DDD5;
+  transition: background 0.2s ease;
+}
+
+.services-intro-section .services-intro-item-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 0;
+  background: #FFFFFF;
+  border: 1px solid #E2DDD5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #223F8E;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(31,50,104,0.06);
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.services-intro-section .services-intro-item:hover .services-intro-item-icon {
+  background: #223F8E;
+  color: #FFFFFF;
+}
+
+.services-intro-section .services-intro-item-body {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.services-intro-section .services-intro-item-title {
+  font-family: 'Noto Serif Hebrew', serif;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin: 0;
+  line-height: 1.35;
+}
+
+.services-intro-section .services-intro-item-desc {
+  font-family: 'Heebo', 'Inter', sans-serif;
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* ── CTA LINK ── */
+.services-intro-section .services-intro-cta {
+  margin-top: 8px;
+}
+
+.services-intro-section .services-intro-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Heebo', 'Inter', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: #223F8E;
+  text-decoration: none;
+  border-bottom: 2px solid #223F8E;
+  padding-bottom: 2px;
+  transition: color 0.2s ease, border-color 0.2s ease, gap 0.2s ease;
+}
+
+.services-intro-section .services-intro-link:hover {
+  color: var(--text-dark);
+  border-color: var(--text-dark);
+  gap: 14px;
+}
+
+.services-intro-section .services-intro-arrow {
+  font-size: 18px;
+  line-height: 1;
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.services-intro-section .services-intro-link:hover .services-intro-arrow {
+  transform: translateX(-4px);
+}
+
+/* ── LEFT COLUMN: VISUAL ── */
+.services-intro-section .services-intro-visual {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: sticky;
+  top: 120px;
+}
+
+.services-intro-section .services-intro-img-frame {
+  position: relative;
+  border: 1px solid #E2DDD5;
+  box-shadow: 0 18px 40px rgba(31,50,104,0.12);
+  overflow: hidden;
+  background: #FFFFFF;
+}
+
+.services-intro-section .services-intro-img {
+  display: block;
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.services-intro-section .services-intro-img-badge {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: rgba(255,255,255,0.92);
+  border: 1px solid #E2DDD5;
+  border-radius: 2px;
+  padding: 6px 12px;
+  font-family: 'Heebo', 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: #223F8E;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  box-shadow: 0 2px 8px rgba(31,50,104,0.08);
+  backdrop-filter: blur(4px);
+}
+
+.services-intro-section .services-intro-badge-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #22c55e;
+  display: inline-block;
+  animation: services-pulse 2s infinite;
+  flex-shrink: 0;
+}
+
+@keyframes services-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.25); }
+}
+
+/* ── METRICS PANEL ── */
+.services-intro-section .services-intro-metrics {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  background: #FFFFFF;
+  border: 1px solid #E2DDD5;
+  box-shadow: 0 4px 14px rgba(31,50,104,0.06);
+}
+
+.services-intro-section .services-intro-metric {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 12px;
+  gap: 6px;
+  text-align: center;
+}
+
+.services-intro-section .services-intro-metric-label {
+  font-family: 'Heebo', 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-muted);
+  line-height: 1.4;
+  text-align: center;
+}
+
+.services-intro-section .services-intro-metric-value {
+  font-family: 'Noto Serif Hebrew', serif;
+  font-size: 26px;
+  font-weight: 700;
+  color: #223F8E;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.services-intro-section .services-intro-metric-divider {
+  width: 1px;
+  background: #E2DDD5;
+  align-self: stretch;
+  flex-shrink: 0;
+}
+
+/* ── CAPTION ── */
+.services-intro-section .services-intro-caption {
+  font-family: 'Heebo', 'Inter', sans-serif;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--text-muted);
+  margin: 0;
+  text-align: center;
+  padding: 0 8px;
+}
+
+/* ── RESPONSIVE: TABLET ── */
+@media (max-width: 1024px) {
+  .services-intro-section .services-intro-container {
+    gap: 48px;
+  }
+
+  .services-intro-section .services-intro-heading {
+    font-size: 38px;
+  }
+
+  .services-intro-section .services-intro-visual {
+    position: static;
+  }
+}
+
+/* ── RESPONSIVE: MOBILE ── */
+@media (max-width: 768px) {
+  .services-intro-section {
+    padding: 100px 16px 60px;
+  }
+
+  .services-intro-section .services-intro-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .services-intro-section .services-intro-heading {
+    font-size: 30px;
+  }
+
+  .services-intro-section .services-intro-body {
+    max-width: 100%;
+  }
+
+  .services-intro-section .services-intro-visual {
+    position: static;
+  }
+
+  .services-intro-section .services-intro-img {
+    height: 220px;
+  }
+
+  .services-intro-section .services-intro-metrics {
+    flex-direction: column;
+  }
+
+  .services-intro-section .services-intro-metric-divider {
+    width: 100%;
+    height: 1px;
+  }
+
+  .services-intro-section .services-intro-metric {
+    padding: 16px 12px;
+  }
+
+  .services-intro-section .services-intro-metric-value {
+    font-size: 22px;
+  }
+
+  .services-intro-section .services-intro-item {
+    grid-template-columns: 40px 1fr;
+    gap: 12px;
+  }
+
+  .services-intro-section .services-intro-item-icon {
+    width: 40px;
+    height: 40px;
+  }
+}
+</style>
     <link rel="stylesheet" href="/styles.css">
 
     <style id="zappy-dropdown-submenu-styles">
@@ -793,101 +1141,89 @@
 </script>
   
   <main>
-    <section class="services-intro-section" data-layout-spec="שירותים-intro" dir="rtl">
+    <section class="services-intro-section" data-layout-spec="שירותים-intro" dir="rtl" data-zappy-section="true">
   <div class="services-intro-container">
-    <!-- Content Column (START = RIGHT in RTL) -->
+
+    <!-- Right column: text content -->
     <div class="services-intro-content">
-      <span class="services-intro-eyebrow">שירותים דיגיטליים</span>
+      <span class="services-intro-label">שירותים דיגיטליים</span>
       <h1 class="services-intro-heading">אסטרטגיה, נוכחות ותוצאות — הכל במערכת אחת</h1>
-      <p class="services-intro-lead">שיווק דיגיטלי אפקטיבי אינו עניין של כלי אחד. הוא מתחיל בהבנת העסק שלכם, ממשיך בבניית תשתית דיגיטלית נכונה, ומסתיים בגיוס לקוחות ממוקדים שמחפשים בדיוק את מה שאתם מציעים. כך בדיוק אני עובדת עם עורכי דין, מגשרים, חברות גיוס וחברות הד-האנטינג.</p>
-      <div class="services-intro-divider"></div>
+      <p class="services-intro-body">שיווק דיגיטלי אפקטיבי אינו עניין של כלי אחד. הוא מתחיל בהבנת העסק שלכם, ממשיך בבניית תשתית דיגיטלית נכונה, ומסתיים בגיוס לקוחות ממוקדים שמחפשים בדיוק את מה שאתם מציעים. כך בדיוק אני עובדת עם עורכי דין, מגשרים, חברות גיוס וחברות הד-האנטינג.</p>
+
       <ul class="services-intro-list">
-        <li class="services-intro-list-item">
-          <span class="services-intro-list-icon" aria-hidden="true">
-            <svg data-element-type="icon" data-icon-type="svg" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="2" y="2" width="7" height="7" rx="1" stroke="currentColor" stroke-width="1.5"></rect>
-              <rect x="11" y="2" width="7" height="7" rx="1" stroke="currentColor" stroke-width="1.5"></rect>
-              <rect x="2" y="11" width="7" height="7" rx="1" stroke="currentColor" stroke-width="1.5"></rect>
-              <path d="M14.5 11v6M11.5 14h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
-            </svg>
-          </span>
-          <div class="services-intro-list-content">
-            <strong>בניית אתרים מקצועיים</strong>
-            <span>אתרי תדמית ושיווק המותאמים לפירמות מקצועיות — מהירים, ממירים ומקצועיים.</span>
+        <li class="services-intro-item">
+          <div class="services-intro-item-icon">
+            <svg data-element-type="icon" data-icon-type="svg" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+          </div>
+          <div class="services-intro-item-body">
+            <h3 class="services-intro-item-title">בניית אתרים מקצועיים</h3>
+            <p class="services-intro-item-desc">אתרי תדמית ושיווק המותאמים לפירמות מקצועיות — מהירים, ממירים ומקצועיים.</p>
           </div>
         </li>
-        <li class="services-intro-list-item">
-          <span class="services-intro-list-icon" aria-hidden="true">
-            <svg data-element-type="icon" data-icon-type="svg" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5"></circle>
-              <path d="M10 6v4l2.5 2.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
-            </svg>
-          </span>
-          <div class="services-intro-list-content">
-            <strong>קידום אורגני (SEO)</strong>
-            <span>אסטרטגיית תוכן וקידום טכני שמביאים את העסק שלכם לראש תוצאות החיפוש.</span>
+        <li class="services-intro-item">
+          <div class="services-intro-item-icon">
+            <svg data-element-type="icon" data-icon-type="svg" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+          </div>
+          <div class="services-intro-item-body">
+            <h3 class="services-intro-item-title">קידום אורגני (SEO)</h3>
+            <p class="services-intro-item-desc">אסטרטגיית תוכן וקידום טכני שמביאים את העסק שלכם לראש תוצאות החיפוש.</p>
           </div>
         </li>
-        <li class="services-intro-list-item">
-          <span class="services-intro-list-icon" aria-hidden="true">
-            <svg data-element-type="icon" data-icon-type="svg" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M3 10h14M3 6h14M3 14h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
-            </svg>
-          </span>
-          <div class="services-intro-list-content">
-            <strong>פרסום ממומן במטא</strong>
-            <span>קמפיינים ממוקדים ב-Facebook ו-Instagram שמגיעים לקהל הנכון בזמן הנכון.</span>
+        <li class="services-intro-item">
+          <div class="services-intro-item-icon">
+            <svg data-element-type="icon" data-icon-type="svg" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+          </div>
+          <div class="services-intro-item-body">
+            <h3 class="services-intro-item-title">פרסום ממומן במטא</h3>
+            <p class="services-intro-item-desc">קמפיינים ממוקדים ב-Facebook ו-Instagram שמגיעים לקהל הנכון בזמן הנכון.</p>
           </div>
         </li>
-        <li class="services-intro-list-item">
-          <span class="services-intro-list-icon" aria-hidden="true">
-            <svg data-element-type="icon" data-icon-type="svg" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M4 15l4-4 3 3 5-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-              <circle cx="16" cy="4" r="2" stroke="currentColor" stroke-width="1.5"></circle>
-            </svg>
-          </span>
-          <div class="services-intro-list-content">
-            <strong>אסטרטגיה דיגיטלית</strong>
-            <span>תכנית עבודה מובנית שמחברת בין כלל הערוצים לכדי מנוע צמיחה עקבי ומדיד.</span>
+        <li class="services-intro-item">
+          <div class="services-intro-item-icon">
+            <svg data-element-type="icon" data-icon-type="svg" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+          </div>
+          <div class="services-intro-item-body">
+            <h3 class="services-intro-item-title">אסטרטגיה דיגיטלית</h3>
+            <p class="services-intro-item-desc">תכנית עבודה מובנית שמחברת בין כלל הערוצים לכדי מנוע צמיחה עקבי ומדיד.</p>
           </div>
         </li>
       </ul>
-      <a href="/contact" class="services-intro-cta">לתיאום שיחת אסטרטגיה</a>
+
+      <div class="services-intro-cta">
+        <a href="/contact" class="services-intro-link">לתיאום שיחת אסטרטגיה <span class="services-intro-arrow" aria-hidden="true">←</span></a>
+      </div>
     </div>
-    <!-- Visual Column (END = LEFT in RTL) -->
+
+    <!-- Left column: dashboard visual -->
     <div class="services-intro-visual">
-      <div class="services-intro-frame">
-        <div class="services-intro-frame-bar">
-          <span class="services-intro-frame-dot"></span>
-          <span class="services-intro-frame-dot"></span>
-          <span class="services-intro-frame-dot"></span>
-          <span class="services-intro-frame-url">galishafir.co.il / analytics</span>
-        </div>
-        <figure class="services-intro-figure">
-          <img data-placeholder="services-intro-image-1" data-context="A polished digital marketing analytics dashboard displayed on a modern laptop screen, showing Google Analytics-style metrics with clean charts, bar graphs, and KPI cards in blue and green. The interface is professional and data-rich, suitable for a B2B digital marketing consultant working with law firms and recruitment companies. The style is clean, corporate, and credible — like a real SaaS analytics tool screenshot." width="600" height="400" src="/assets/site-services-intro-image-1.webp" alt="לוח בקרה של אנליטיקס דיגיטלי המציג מדדי ביצוע שיווקיים">
-        </figure>
-        <div class="services-intro-frame-caption">
-          <span class="services-intro-frame-badge">Live Dashboard</span>
-          <span class="services-intro-frame-caption-text">מדדי ביצוע בזמן אמת — שקיפות מלאה לאורך כל הדרך</span>
+      <div class="services-intro-img-frame">
+        <img alt="לוח בקרה של אנליטיקס דיגיטלי המציג מדדי ביצוע שיווקיים" class="services-intro-img" src="/assets/site-services-intro-image-1.webp" data-placeholder="services-intro-image-1" data-context="A polished digital marketing analytics dashboard displayed on a modern laptop screen, showing Google Analytics-style metrics with clean charts, bar graphs, and KPI cards in blue and green. The interface is professional and data-rich, suitable for a B2B digital marketing consultant working with law firms and recruitment companies. The style is clean, corporate, and credible — like a real SaaS analytics tool screenshot." style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
+        <div class="services-intro-img-badge">
+          <span class="services-intro-badge-dot" aria-hidden="true"></span>
+          <span>Live Dashboard</span>
         </div>
       </div>
-      <div class="services-intro-stat-row">
-        <div class="services-intro-stat">
-          <strong>+240%</strong>
-          <span>ממוצע עלייה בתנועה אורגנית</span>
+
+      <div class="services-intro-metrics">
+        <div class="services-intro-metric">
+          <span class="services-intro-metric-label">ממוצע עלייה בתנועה אורגנית</span>
+          <span class="services-intro-metric-value">+180%</span>
         </div>
-        <div class="services-intro-stat-sep"></div>
-        <div class="services-intro-stat">
-          <strong>3× ROI</strong>
-          <span>ממוצע החזר על קמפיינים ממומנים</span>
+        <div class="services-intro-metric-divider" aria-hidden="true"></div>
+        <div class="services-intro-metric">
+          <span class="services-intro-metric-label">ממוצע החזר על קמפיינים ממומנים</span>
+          <span class="services-intro-metric-value">×4.2</span>
         </div>
-        <div class="services-intro-stat-sep"></div>
-        <div class="services-intro-stat">
-          <strong>48 שעות</strong>
-          <span>זמן תגובה לכל פנייה עסקית</span>
+        <div class="services-intro-metric-divider" aria-hidden="true"></div>
+        <div class="services-intro-metric">
+          <span class="services-intro-metric-label">זמן תגובה לכל פנייה עסקית</span>
+          <span class="services-intro-metric-value">&lt;24h</span>
         </div>
       </div>
+
+      <p class="services-intro-caption">מדדי ביצוע בזמן אמת — שקיפות מלאה לאורך כל הדרך</p>
     </div>
+
   </div>
 </section>
 
