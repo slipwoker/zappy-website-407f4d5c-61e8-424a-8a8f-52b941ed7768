@@ -1,0 +1,1596 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    <title>מומחיות בשיווק לענפים מקצועיים ותחרותיים — גלי שפיר</title>
+    <meta name="description" content="עורכי דין, מגשרים, הד הנטרים וחברות גיוס — גלי שפיר מכירה את האתגרים הייחודיים של כל תעשייה ומתאימה אסטרטגיית שיווק דיגיטלי שמביאה לקוחות רלוונטיים בדיוק לדלת שלכם.">
+    <meta name="keywords" content="שיווק דיגיטלי לעורכי דין, best seo companies for small business, שיווק לחברות גיוס, קידום לשירותים מקצועיים">
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48x48.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/assets/favicon-512x512.png">
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+    <!-- Zappy Analytics -->
+<script>
+(function() {
+  'use strict';
+  
+  // Configuration
+  var config = {
+    websiteId: '407f4d5c-61e8-424a-8a8f-52b941ed7768',
+    apiUrl: 'https://api.zappy5.com/api/analytics/track',
+    sessionDuration: 30 * 60 * 1000, // 30 minutes
+    visitorDuration: 30 * 24 * 60 * 60 * 1000, // 30 days
+    trackPageViews: true,
+    trackClicks: true,
+    trackFormSubmissions: true
+  };
+  
+  // Generate or retrieve persistent visitor ID (30 days)
+  function getVisitorId() {
+    var visitorKey = 'zappy_visitor_' + config.websiteId;
+    var visitor = null;
+    
+    try {
+      visitor = localStorage.getItem(visitorKey);
+      if (visitor) {
+        var visitorData = JSON.parse(visitor);
+        var now = Date.now();
+        
+        // Check if visitor ID is still valid (30 days)
+        if (now - visitorData.created < config.visitorDuration) {
+          // Update last seen timestamp
+          visitorData.lastSeen = now;
+          localStorage.setItem(visitorKey, JSON.stringify(visitorData));
+          return visitorData.id;
+        }
+      }
+    } catch (e) {
+      console.warn('Zappy Analytics: LocalStorage not available');
+    }
+    
+    // Generate new visitor ID
+    var newVisitorId = 'zv_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+    
+    try {
+      localStorage.setItem(visitorKey, JSON.stringify({
+        id: newVisitorId,
+        created: Date.now(),
+        lastSeen: Date.now()
+      }));
+    } catch (e) {
+      // Continue without local storage
+    }
+    
+    return newVisitorId;
+  }
+  
+  // Generate or retrieve session ID (30 minutes)
+  function getSessionId() {
+    var sessionKey = 'zappy_session_' + config.websiteId;
+    var session = null;
+    
+    try {
+      session = sessionStorage.getItem(sessionKey);
+      if (session) {
+        var sessionData = JSON.parse(session);
+        var now = Date.now();
+        
+        // Check if session is still valid
+        if (now - sessionData.timestamp < config.sessionDuration) {
+          // Update timestamp
+          sessionData.timestamp = now;
+          sessionStorage.setItem(sessionKey, JSON.stringify(sessionData));
+          return sessionData.id;
+        }
+      }
+    } catch (e) {
+      console.warn('Zappy Analytics: SessionStorage not available');
+    }
+    
+    // Generate new session ID
+    var newSessionId = 'zs_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+    
+    try {
+      sessionStorage.setItem(sessionKey, JSON.stringify({
+        id: newSessionId,
+        timestamp: Date.now()
+      }));
+    } catch (e) {
+      // Continue without session storage
+    }
+    
+    return newSessionId;
+  }
+  
+  var visitorId = getVisitorId();
+  var sessionId = getSessionId();
+  
+  // Track an event
+  function trackEvent(eventType, data) {
+    data = data || {};
+    
+    var eventData = {
+      website_id: config.websiteId,
+      event_type: eventType,
+      page_path: window.location.pathname,
+      referrer: document.referrer || 'direct',
+      visitor_id: visitorId,
+      session_id: sessionId,
+      metadata: data
+    };
+    
+    // Use sendBeacon if available (better for page unload events)
+    if (navigator.sendBeacon) {
+      var blob = new Blob([JSON.stringify(eventData)], { type: 'application/json' });
+      navigator.sendBeacon(config.apiUrl, blob);
+    } else {
+      // Fallback to fetch
+      fetch(config.apiUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(eventData),
+        keepalive: true
+      }).catch(function(error) {
+        console.warn('Zappy Analytics: Failed to track event', error);
+      });
+    }
+  }
+  
+  // Track page view
+  if (config.trackPageViews) {
+    trackEvent('pageview', {
+      title: document.title,
+      url: window.location.href
+    });
+  }
+  
+  // Track clicks on important elements
+  if (config.trackClicks) {
+    document.addEventListener('click', function(e) {
+      var target = e.target;
+      
+      // Track button clicks (counted as actions)
+      if (target.tagName === 'BUTTON' || target.closest('button')) {
+        var button = target.tagName === 'BUTTON' ? target : target.closest('button');
+        trackEvent('click', {
+          element: 'button',
+          text: button.textContent.trim().substring(0, 100),
+          id: button.id || null,
+          class: button.className || null
+        });
+      }
+      
+      // Track link clicks (navigation - not counted as actions)
+      else if (target.tagName === 'A' || target.closest('a')) {
+        var link = target.tagName === 'A' ? target : target.closest('a');
+        trackEvent('navigation', {
+          element: 'link',
+          text: link.textContent.trim().substring(0, 100),
+          href: link.href,
+          external: link.hostname !== window.location.hostname
+        });
+      }
+    }, true);
+  }
+  
+  // Track form submissions
+  if (config.trackFormSubmissions) {
+    document.addEventListener('submit', function(e) {
+      var form = e.target;
+      
+      trackEvent('form_submit', {
+        form_id: form.id || null,
+        form_name: form.name || null,
+        form_action: form.action || null,
+        form_method: form.method || 'GET'
+      });
+    }, true);
+  }
+  
+  // Track time on page (send on page unload)
+  var pageLoadTime = Date.now();
+  
+  window.addEventListener('beforeunload', function() {
+    var timeOnPage = Math.floor((Date.now() - pageLoadTime) / 1000); // in seconds
+    
+    trackEvent('page_unload', {
+      time_on_page: timeOnPage,
+      page_path: window.location.pathname
+    });
+  });
+  
+  // Expose tracking function globally for custom events
+  window.zappyAnalytics = {
+    track: trackEvent,
+    getVisitorId: function() { return visitorId; },
+    getSessionId: function() { return sessionId; }
+  };
+  
+})();
+</script>
+<!-- End Zappy Analytics -->
+    <meta property="og:title" content="מומחיות בשיווק לענפים מקצועיים ותחרותיים — גלי שפיר">
+    <meta property="og:description" content="עורכי דין, מגשרים, הד הנטרים וחברות גיוס — גלי שפיר מכירה את האתגרים הייחודיים של כל תעשייה ומתאימה אסטרטגיית שיווק דיגיטלי שמביאה לקוחות רלוונטיים בדיוק לדלת שלכם.">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="מומחיות בשיווק לענפים מקצועיים ותחרותיים — גלי שפיר">
+    <meta name="twitter:description" content="עורכי דין, מגשרים, הד הנטרים וחברות גיוס — גלי שפיר מכירה את האתגרים הייחודיים של כל תעשייה ומתאימה אסטרטגיית שיווק דיגיטלי שמביאה לקוחות רלוונטיים בדיוק לדלת שלכם.">
+    <meta property="og:type" content="website">
+  <meta property="og:locale" content="he_IL">
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48x48.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/assets/favicon-512x512.png">
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+    <!-- Cookie Consent -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vanilla-cookieconsent@3/dist/cookieconsent.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-cookieconsent@3/dist/cookieconsent.umd.js"></script>
+    <!-- Mickidum Accessibility Toolbar -->
+    <script src="https://cdn.jsdelivr.net/gh/mickidum/acc_toolbar/acctoolbar/acctoolbar.min.js"></script>
+    <link rel="stylesheet" href="/styles.css">
+
+    <style id="zappy-dropdown-submenu-styles">
+      /* ========== DESKTOP DROPDOWN SUBMENU STYLES ========== */
+      /* Base styles for dropdown submenus - parent must be positioned */
+      .nav-menu li:has(.sub-menu), nav li:has(.sub-menu), .navbar li:has(.sub-menu), #navMenu li:has(.sub-menu) { position: relative; }
+      /* Submenu base - hidden by default */
+      .nav-menu .sub-menu, nav .sub-menu, .navbar .sub-menu, #navMenu .sub-menu { display: block !important; position: absolute !important; top: 100%; left: 0; min-width: 220px; background: white; border-radius: 8px; box-shadow: 0 8px 25px rgba(0,0,0,0.15); padding: 8px 0; opacity: 0; visibility: hidden; transform: translateY(10px); transition: all 0.3s ease; z-index: 1000; list-style: none; pointer-events: none; }
+      /* CRITICAL: Desktop hover styles to show dropdown */
+      .nav-menu li:hover > .sub-menu, nav li:hover > .sub-menu, .navbar li:hover > .sub-menu, #navMenu li:hover > .sub-menu { opacity: 1 !important; visibility: visible !important; transform: translateY(0) !important; pointer-events: auto !important; }
+      /* Submenu item styling */
+      .sub-menu li { list-style: none; margin: 0; padding: 0; }
+      .sub-menu a { display: block !important; padding: 10px 16px !important; color: var(--text-dark, #333) !important; font-weight: 500; text-decoration: none; white-space: nowrap; transition: background-color 0.2s; }
+      .sub-menu .zappy-nav-child > a { padding-left: 28px !important; font-size: 0.9em !important; opacity: 0.85 !important; }
+      [dir="rtl"] .sub-menu .zappy-nav-child > a, html[lang="he"] .sub-menu .zappy-nav-child > a, html[lang="ar"] .sub-menu .zappy-nav-child > a { padding-left: 10px !important; padding-right: 28px !important; }
+      .sub-menu .zappy-nav-parent > a { font-weight: 600 !important; }
+      .sub-menu a:hover { background-color: #f5f5f5; }
+      /* RTL (Hebrew/Arabic) dropdown positioning */
+      [dir="rtl"] .nav-menu .sub-menu, [dir="rtl"] nav .sub-menu, [dir="rtl"] .navbar .sub-menu, html[lang="he"] .nav-menu .sub-menu, html[lang="he"] nav .sub-menu, html[lang="he"] .navbar .sub-menu, html[lang="ar"] .nav-menu .sub-menu, html[lang="ar"] nav .sub-menu, html[lang="ar"] .navbar .sub-menu { left: auto !important; right: 0 !important; }
+      /* Hide empty dropdown menus (exclude catalog sub-menus that use <a> children instead of <li>) */
+      .sub-menu:empty, .sub-menu:not(:has(li:not(.zappy-hidden-menu-item))):not(:has(> a)), .sub-menu:not(:has(li)):not(:has(> a)) { display: none !important; opacity: 0 !important; visibility: hidden !important; pointer-events: none !important; }
+      /* Desktop: show submenu on Menu Group hover */
+      li:has(.menu-group-title):hover > .sub-menu { opacity: 1 !important; visibility: visible !important; transform: translateY(0) !important; pointer-events: auto !important; }
+      /* Menu Group title styling */
+      .nav-menu > li > .menu-group-title, #navMenu > li > .menu-group-title { display: inline-block; padding: 0.5rem 1rem; cursor: default; user-select: none; }
+      
+      /* ========== MOBILE SUBMENU STYLES ========== */
+      @media (max-width: 768px) {
+        .nav-menu .sub-menu, nav .sub-menu, .navbar .sub-menu, #navMenu .sub-menu { position: static !important; transform: none !important; box-shadow: none !important; background: transparent !important; max-height: 0; overflow: hidden; opacity: 0; visibility: hidden; transition: max-height 0.3s ease, opacity 0.3s ease; padding: 0 !important; border-radius: 0 !important; }
+        .navbar .sub-menu.mobile-expanded, .nav-menu .sub-menu.mobile-expanded, #navMenu .sub-menu.mobile-expanded { max-height: none !important; overflow-y: visible !important; opacity: 1 !important; visibility: visible !important; padding: 8px 0 8px 16px !important; }
+        [dir="rtl"] .sub-menu.mobile-expanded, html[lang="he"] .sub-menu.mobile-expanded { padding: 8px 16px 8px 0 !important; }
+        /* Disable hover behavior on mobile */
+        .nav-menu li:hover > .sub-menu, nav li:hover > .sub-menu, .navbar li:hover > .sub-menu, #navMenu li:hover > .sub-menu { opacity: 0; visibility: hidden; pointer-events: none; }
+        .nav-menu li > .sub-menu.mobile-expanded, nav li > .sub-menu.mobile-expanded, .navbar li > .sub-menu.mobile-expanded, #navMenu li > .sub-menu.mobile-expanded { opacity: 1 !important; visibility: visible !important; pointer-events: auto !important; }
+        .nav-menu li:has(.sub-menu), nav li:has(.sub-menu), .navbar li:has(.sub-menu), #navMenu li:has(.sub-menu) { display: flex !important; flex-wrap: wrap !important; align-items: center !important; position: relative !important; min-height: 44px !important; }
+        .nav-menu li:has(.sub-menu) > a, nav li:has(.sub-menu) > a, .navbar li:has(.sub-menu) > a, #navMenu li:has(.sub-menu) > a { flex: 1 !important; min-width: 0 !important; }
+        .nav-menu li:has(.sub-menu) > .menu-group-title, nav li:has(.sub-menu) > .menu-group-title, .navbar li:has(.sub-menu) > .menu-group-title, #navMenu li:has(.sub-menu) > .menu-group-title { flex: 1 !important; min-width: 0 !important; padding: 0 !important; line-height: inherit !important; }
+        .nav-menu li:has(.sub-menu) > .sub-menu, nav li:has(.sub-menu) > .sub-menu, .navbar li:has(.sub-menu) > .sub-menu, #navMenu li:has(.sub-menu) > .sub-menu { flex-basis: 100% !important; width: 100% !important; }
+        .nav-menu li:has(.sub-menu) > a [class*="chevron"], .nav-menu li:has(.sub-menu) > a [class*="arrow"], .nav-menu li:has(.sub-menu) > a .fa-chevron-down, .nav-menu li:has(.sub-menu) > a .fa-angle-down, nav li:has(.sub-menu) > a [class*="chevron"], nav li:has(.sub-menu) > a [class*="arrow"], #navMenu li:has(.sub-menu) > a [class*="chevron"], #navMenu li:has(.sub-menu) > a [class*="arrow"] { display: none !important; visibility: hidden !important; }
+        .mobile-submenu-toggle { display: flex !important; align-items: center !important; justify-content: center !important; width: 44px !important; height: auto !important; background: transparent !important; border: none !important; cursor: pointer !important; color: var(--text-dark) !important; position: static !important; flex-shrink: 0 !important; align-self: stretch !important; z-index: 2 !important; padding: 0 !important; margin: 0 !important; }
+        .mobile-submenu-toggle::after { content: '' !important; width: 0 !important; height: 0 !important; border-left: 6px solid transparent !important; border-right: 6px solid transparent !important; border-top: 7px solid currentColor !important; transition: transform 0.3s ease !important; }
+        .mobile-submenu-toggle.expanded::after { transform: rotate(180deg) !important; }
+        .sub-menu a { padding: 10px 0 !important; display: block !important; color: var(--text-dark) !important; white-space: normal !important; }
+        .sub-menu .zappy-nav-child > a { padding-left: 28px !important; font-size: 0.9em !important; opacity: 0.85 !important; }
+        [dir="rtl"] .sub-menu .zappy-nav-child > a, html[lang="he"] .sub-menu .zappy-nav-child > a, html[lang="ar"] .sub-menu .zappy-nav-child > a { padding-left: 0 !important; padding-right: 28px !important; }
+        .sub-menu .zappy-nav-parent > a { font-weight: 600 !important; }
+        .nav-menu.active, #navMenu.active { max-width: 100vw !important; overflow-x: hidden !important; box-sizing: border-box !important; }
+        .navbar .sub-menu li a, nav.navbar .sub-menu li a, .zappy-products-dropdown .sub-menu a { color: var(--text-dark) !important; }
+      }
+      @media (min-width: 769px) { .mobile-submenu-toggle { display: none !important; } }
+    </style>
+
+    <style id="mobile-lang-menu-deployed-css">
+    @media (max-width: 768px) {
+      .lang-switcher,
+      .nav-cta-container .lang-switcher,
+      .nav-container .lang-switcher,
+      .navbar .lang-switcher,
+      .navbar .nav-cta-container .lang-switcher,
+      .nav-icons-left .lang-switcher,
+      .nav-ecommerce-icons .lang-switcher { display: none !important; }
+      .mobile-lang-menu { width: 100%; border-top: 1px solid rgba(128,128,128,0.2); padding: 8px 0 0 0; margin-top: 8px; }
+      .mobile-lang-toggle { display: flex !important; align-items: center; justify-content: space-between; width: 100%; padding: 12px 16px; background: none; border: none; cursor: pointer; font-size: 15px; color: inherit; font-family: inherit; }
+      .mobile-lang-toggle::after { content: ''; display: inline-block; width: 8px; height: 8px; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor; transform: rotate(45deg); transition: transform 0.3s ease; margin-left: 8px; }
+      .mobile-lang-toggle.expanded::after { transform: rotate(-135deg); }
+      .mobile-lang-options { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+      .mobile-lang-options.expanded { max-height: 300px; }
+      .mobile-lang-option { display: flex !important; align-items: center; gap: 10px; padding: 10px 24px; text-decoration: none; color: inherit; font-size: 14px; font-family: inherit; }
+      .mobile-lang-option:hover { background: rgba(128,128,128,0.1); }
+      .mobile-lang-option.active { font-weight: 600; opacity: 0.7; pointer-events: none; }
+      .mobile-lang-option img { width: 20px; height: 20px; border-radius: 50%; }
+    }
+    @media (min-width: 769px) {
+      .mobile-lang-menu { display: none !important; }
+    }
+    </style>
+
+    <style id="zappy-widget-visibility">
+      #mic-access-tool-general-button, .mic-access-tool-general-button,
+      #mic-init-access-tool .mic-access-tool-general-button, #mic-init-access-tool #mic-access-tool-general-button,
+      ._access-icon, #mic-access-tool-box, .mic-access-tool-box,
+      #mic-init-access-tool #mic-access-tool-box, div[id*="mic-access-tool-box"], ._access-menu {
+        display: none !important; visibility: hidden !important; opacity: 0 !important; pointer-events: none !important;
+      }
+    </style>
+</head>
+<body>
+
+  <nav class="navbar" dir="rtl">
+  <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+    <svg class="hamburger-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+      <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+    </svg>
+    <svg class="close-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" style="display: none;">
+      <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+    </svg>
+  </button>
+
+  <button class="phone-header-btn" data-phone="[business_phone]" aria-label="Call">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+    </svg>
+  </button>
+
+  <div class="nav-container">
+    <div class="nav-right-group"><div class="nav-brand">
+      <a href="/" class="logo-link">
+        <img src="/assets/business-logo.webp" alt="גלי שפיר" class="logo" />
+      </a>
+    </div><ul class="nav-menu" id="navMenu"><li><a href="/services">שירותים</a></li><li><a href="/industries">תעשיות</a></li><li><a href="/about">אודות</a></li></ul></div>
+
+    
+
+    <div class="nav-cta-container">
+      <a href="/contact" class="nav-cta-btn">צור קשר</a>
+    </div>
+  </div>
+</nav>
+<script>
+
+// Navbar Mobile Menu Toggle and Contrast Fix
+(function() {
+  // Use 'load' event instead of 'DOMContentLoaded' to ensure we run AFTER all other scripts
+  window.addEventListener('load', function() {
+    
+    // FIX MOBILE BUTTON CONTRAST
+    // Detect navbar background color and apply contrasting color to mobile buttons
+    const navbar = document.querySelector('.navbar, nav, header');
+    if (!navbar) {
+      console.log('[Navbar] Navbar element not found');
+      return;
+    }
+    
+    // DECLARE VARIABLES EARLY to avoid Temporal Dead Zone errors
+    // These are used in multiple places below
+    let mobileToggle = document.getElementById('mobileToggle') ||
+                       document.querySelector('.mobile-toggle') ||
+                       document.querySelector('.hamburger') ||
+                       document.querySelector('.hamburger-menu') ||
+                       document.querySelector('.menu-toggle') ||
+                       document.querySelector('.burger-menu') ||
+                       document.querySelector('[aria-label="Menu"]') ||
+                       document.querySelector('[aria-label="תפריט"]');
+    
+    const phoneBtn = document.querySelector('.phone-header-btn');
+    
+    const computedStyle = window.getComputedStyle(navbar);
+    let bgColor = computedStyle.backgroundColor;
+    
+    console.log('[Navbar] Initial navbar background:', bgColor);
+    
+    // Check if background is transparent or rgba with 0 alpha
+    const isTransparent = bgColor === 'transparent' || 
+                         bgColor === 'rgba(0, 0, 0, 0)' ||
+                         (bgColor.startsWith('rgba') && bgColor.includes(', 0)'));
+    
+    if (isTransparent) {
+      // Check for background-image or gradient
+      const bgImage = computedStyle.backgroundImage;
+      if (bgImage && bgImage !== 'none') {
+        console.log('[Navbar] Navbar has background image/gradient, using dark text');
+        bgColor = 'rgb(240, 240, 240)'; // Assume light background
+      } else {
+        // Transparent navbar - check body background
+        const bodyBg = window.getComputedStyle(document.body).backgroundColor;
+        console.log('[Navbar] Navbar transparent, using body background:', bodyBg);
+        bgColor = bodyBg;
+      }
+    }
+    
+    // Calculate luminance to determine if background is light or dark
+    const rgb = bgColor.match(/\d+/g);
+    if (rgb && rgb.length >= 3) {
+      const r = parseInt(rgb[0]);
+      const g = parseInt(rgb[1]);
+      const b = parseInt(rgb[2]);
+      const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
+      
+      // Mobile button colors are set by Claude's AI-generated CSS (same as .nav-menu a)
+      // No dynamic color overrides needed - colors come from the generated navbar CSS
+      console.log('[Navbar] Mobile button colors preserved from Claude CSS (luminance:', luminance.toFixed(2) + ')');
+      
+      // FIX ICON SIZES - Ensure SVGs are properly sized and visible
+      // INJECT CRITICAL CSS TO OVERRIDE ANY CONFLICTING RULES
+      const criticalCSS = document.createElement('style');
+      criticalCSS.id = 'zappy-mobile-nav-fix';
+      const htmlLang = document.documentElement.lang || 'en';
+      const htmlDir = document.documentElement.dir || 'ltr';
+      // Check both dir attribute AND lang for RTL detection
+      // dir="rtl" is the most reliable indicator
+      const isRTL = htmlDir === 'rtl' || htmlLang === 'he' || htmlLang === 'ar';
+      
+      criticalCSS.textContent = `
+        /* Hide mobile buttons on desktop, show only on mobile */
+        @media (min-width: 769px) {
+          .mobile-toggle,
+          .phone-header-btn {
+            display: none !important;
+          }
+        }
+        
+        /* Show and position mobile buttons correctly on mobile */
+        @media (max-width: 768px) {
+          .mobile-toggle,
+          .phone-header-btn {
+            position: absolute !important;
+            top: 50% !important;
+            transform: translateY(-50%) !important;
+            z-index: 1001 !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            width: 36px !important;
+            height: 36px !important;
+            border-radius: 50% !important;
+            border: none !important;
+            cursor: pointer !important;
+            padding: 6px !important;
+            background: none !important;
+            color: var(--nav-text, var(--text-dark)) !important;
+          }
+          
+          /* LTR positioning (default): hamburger LEFT, phone RIGHT */
+          html:not([dir="rtl"]):not([lang="he"]):not([lang="ar"]) .mobile-toggle,
+          html[dir="ltr"] .mobile-toggle {
+            left: 12px !important;
+            right: auto !important;
+          }
+          html:not([dir="rtl"]):not([lang="he"]):not([lang="ar"]) .phone-header-btn,
+          html[dir="ltr"] .phone-header-btn {
+            right: 12px !important;
+            left: auto !important;
+          }
+          
+          /* RTL positioning: hamburger RIGHT, phone LEFT */
+          html[dir="rtl"] .mobile-toggle,
+          html[lang="he"] .mobile-toggle,
+          html[lang="ar"] .mobile-toggle {
+            right: 12px !important;
+            left: auto !important;
+          }
+          html[dir="rtl"] .phone-header-btn,
+          html[lang="he"] .phone-header-btn,
+          html[lang="ar"] .phone-header-btn {
+            left: 12px !important;
+            right: auto !important;
+          }
+          
+          /* CRITICAL: Ensure nav-container has min-height on mobile */
+          /* All children are positioned absolutely/fixed on mobile, so height:auto collapses to 0 */
+          .nav-container {
+            min-height: 70px !important;
+            position: relative !important;
+          }
+          
+          /* Ensure SVG icons are properly sized and inherit color */
+          .mobile-toggle svg,
+          .phone-header-btn svg {
+            width: 24px !important;
+            height: 24px !important;
+            /* Don't force display - let JavaScript control hamburger/close toggle */
+          }
+          
+          /* Reset nav-cta-container on mobile - remove desktop box-shadow/padding */
+          /* that creates a visible ghost box when CTA button is hidden */
+          .nav-cta-container {
+            box-shadow: none !important;
+            padding: 0 !important;
+          }
+          
+          /* Hide nav-cta-container entirely on mobile when there's no lang-switcher */
+          /* (only the CTA button is inside, and it's hidden on mobile) */
+          .nav-cta-container:not(:has(.lang-switcher)) {
+            display: none !important;
+          }
+          
+          /* CRITICAL: Prevent hero image fade gradient from bleeding over headline text */
+          /* The .image-fade-gradient has bottom: -30px (extends below parent) */
+          /* On mobile stacked layout, this overlaps the h1 text below the image */
+          .hero-image-column {
+            overflow: hidden !important;
+          }
+          .image-fade-gradient {
+            bottom: 0 !important;
+          }
+          
+          /* Hide desktop language switcher on mobile - hamburger menu handles it */
+          /* High specificity to override stored CSS */
+          .lang-switcher,
+          .nav-cta-container .lang-switcher,
+          .nav-container .lang-switcher,
+          .navbar .lang-switcher,
+          .navbar .nav-cta-container .lang-switcher {
+            display: none !important;
+          }
+        }
+      `;
+      
+      // Remove existing fix if present and inject new one
+      const existing = document.getElementById('zappy-mobile-nav-fix');
+      if (existing) existing.remove();
+      document.head.appendChild(criticalCSS);
+      
+      console.log('[Navbar] Critical CSS injected for mobile nav positioning');
+      
+      // ONLY apply inline positioning styles on mobile viewport
+      // On desktop, the CSS handles hiding these buttons with display: none
+      // Inline styles were breaking desktop layout by overriding CSS
+      const isMobileViewport = window.innerWidth <= 768;
+      
+      if (mobileToggle) {
+        // Icon sizing applies to all viewports for consistency
+        const hamburgerIcon = mobileToggle.querySelector('.hamburger-icon');
+        const closeIcon = mobileToggle.querySelector('.close-icon');
+        
+        if (hamburgerIcon) {
+          hamburgerIcon.style.setProperty('width', '24px', 'important');
+          hamburgerIcon.style.setProperty('height', '24px', 'important');
+          hamburgerIcon.style.setProperty('display', 'block', 'important'); // Show hamburger by default
+        }
+        if (closeIcon) {
+          closeIcon.style.setProperty('width', '24px', 'important');
+          closeIcon.style.setProperty('height', '24px', 'important');
+          closeIcon.style.setProperty('display', 'none', 'important'); // Hide close icon by default
+        }
+        
+        // ONLY set positioning inline styles on mobile
+        if (isMobileViewport) {
+          mobileToggle.style.setProperty('position', 'absolute', 'important');
+          mobileToggle.style.setProperty('top', '50%', 'important');
+          mobileToggle.style.setProperty('transform', 'translateY(-50%)', 'important');
+          mobileToggle.style.setProperty('z-index', '1001', 'important');
+          
+          // Clear any inline left/right so CSS can take over based on html[dir]
+          mobileToggle.style.removeProperty('left');
+          mobileToggle.style.removeProperty('right');
+          
+          console.log('[Navbar] Mobile toggle positioning applied (mobile viewport)');
+        } else {
+          // On desktop, clear any positioning styles to let CSS handle it
+          mobileToggle.style.removeProperty('position');
+          mobileToggle.style.removeProperty('top');
+          mobileToggle.style.removeProperty('transform');
+          mobileToggle.style.removeProperty('z-index');
+          mobileToggle.style.removeProperty('left');
+          mobileToggle.style.removeProperty('right');
+          console.log('[Navbar] Desktop viewport - cleared mobile toggle inline positioning');
+        }
+      }
+      
+      if (phoneBtn) {
+        // Icon sizing applies to all viewports
+        const phoneIcon = phoneBtn.querySelector('svg');
+        if (phoneIcon) {
+          phoneIcon.style.width = '24px';
+          phoneIcon.style.height = '24px';
+          phoneIcon.setAttribute('width', '24');
+          phoneIcon.setAttribute('height', '24');
+        }
+        
+        // ONLY set positioning inline styles on mobile
+        if (isMobileViewport) {
+          phoneBtn.style.setProperty('position', 'absolute', 'important');
+          phoneBtn.style.setProperty('top', '50%', 'important');
+          phoneBtn.style.setProperty('transform', 'translateY(-50%)', 'important');
+          phoneBtn.style.setProperty('z-index', '1001', 'important');
+          
+          // Clear any inline left/right so CSS can take over based on html[dir]
+          phoneBtn.style.removeProperty('left');
+          phoneBtn.style.removeProperty('right');
+          
+          console.log('[Navbar] Phone button positioning applied (mobile viewport)');
+        } else {
+          // On desktop, clear any positioning styles to let CSS handle it
+          phoneBtn.style.removeProperty('position');
+          phoneBtn.style.removeProperty('top');
+          phoneBtn.style.removeProperty('transform');
+          phoneBtn.style.removeProperty('z-index');
+          phoneBtn.style.removeProperty('left');
+          phoneBtn.style.removeProperty('right');
+          console.log('[Navbar] Desktop viewport - cleared phone button inline positioning');
+        }
+      }
+    } else {
+      console.log('[Navbar] Could not parse background color:', bgColor);
+    }
+    
+    // MOBILE MENU TOGGLE
+    // Re-query in case DOM changed (mobileToggle already declared at top of function)
+    mobileToggle = document.getElementById('mobileToggle') ||
+                   document.querySelector('.mobile-toggle') ||
+                   document.querySelector('.hamburger') ||
+                   document.querySelector('.hamburger-menu') ||
+                   document.querySelector('.menu-toggle') ||
+                   document.querySelector('.burger-menu') ||
+                   document.querySelector('[aria-label="Menu"]') ||
+                   document.querySelector('[aria-label="תפריט"]');
+    
+    // EXPANDED SEARCH: Find nav menu by ID or class
+    const navMenu = document.getElementById('navMenu') ||
+                  document.querySelector('.nav-menu') ||
+                  document.querySelector('.nav-links') ||
+                  document.querySelector('nav ul:not(.submenu)');
+    
+    if (!mobileToggle || !navMenu) {
+      console.log('[Navbar] Mobile toggle or menu not found:', { toggle: !!mobileToggle, menu: !!navMenu });
+      return;
+    }
+    
+    // Ensure navMenu has ID for CSS targeting
+    if (!navMenu.id) {
+      navMenu.id = 'navMenu';
+    }
+    
+    console.log('[Navbar] Initializing mobile menu...');
+    
+    // Remove any existing event listeners by cloning the button
+    const newToggle = mobileToggle.cloneNode(true);
+    mobileToggle.parentNode.replaceChild(newToggle, mobileToggle);
+    
+    // Toggle menu on button click - use newToggle now
+    newToggle.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      
+      const hamburgerIcon = this.querySelector('.hamburger-icon');
+      const closeIcon = this.querySelector('.close-icon');
+      const isActive = navMenu.classList.contains('active');
+      
+      if (isActive) {
+        // Close menu
+        navMenu.classList.remove('active');
+        if (hamburgerIcon) hamburgerIcon.style.setProperty('display', 'block', 'important');
+        if (closeIcon) closeIcon.style.setProperty('display', 'none', 'important');
+        document.body.style.overflow = '';
+        console.log('[Navbar] Menu closed');
+      } else {
+        // Open menu
+        navMenu.classList.add('active');
+        if (hamburgerIcon) hamburgerIcon.style.setProperty('display', 'none', 'important');
+        if (closeIcon) closeIcon.style.setProperty('display', 'block', 'important');
+        document.body.style.overflow = 'hidden';
+        console.log('[Navbar] Menu opened');
+      }
+    });
+    
+    // Close menu when clicking nav links (but NOT dropdown toggles)
+    const navLinks = navMenu.querySelectorAll('a');
+    navLinks.forEach(function(link) {
+      link.addEventListener('click', function() {
+        // Don't close if it's a dropdown child (unless it's a real navigation link)
+        if (this.getAttribute('href') === '#') return;
+        
+        const hamburgerIcon = newToggle.querySelector('.hamburger-icon');
+        const closeIcon = newToggle.querySelector('.close-icon');
+        
+        navMenu.classList.remove('active');
+        if (hamburgerIcon) hamburgerIcon.style.setProperty('display', 'block', 'important');
+        if (closeIcon) closeIcon.style.setProperty('display', 'none', 'important');
+        document.body.style.overflow = '';
+        console.log('[Navbar] Menu closed (link clicked)');
+      });
+    });
+    
+    // DROPDOWN MENU TOGGLE (for mobile and touch devices)
+    var dropdownToggles = navMenu.querySelectorAll('.dropdown-toggle');
+    dropdownToggles.forEach(function(toggle) {
+      toggle.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        var parent = this.closest('.nav-dropdown');
+        if (!parent) return;
+        
+        // Close other open dropdowns at the same level
+        var siblings = parent.parentNode.querySelectorAll('.nav-dropdown.open');
+        siblings.forEach(function(sib) {
+          if (sib !== parent) sib.classList.remove('open');
+        });
+        
+        parent.classList.toggle('open');
+        console.log('[Navbar] Dropdown toggled:', parent.classList.contains('open') ? 'open' : 'closed');
+      });
+    });
+    
+    // Close dropdowns when clicking outside
+    document.addEventListener('click', function(e) {
+      if (!e.target.closest('.nav-dropdown')) {
+        var openDropdowns = document.querySelectorAll('.nav-dropdown.open');
+        openDropdowns.forEach(function(dd) { dd.classList.remove('open'); });
+      }
+    });
+    
+    console.log('[Navbar] Dropdown handlers initialized for ' + dropdownToggles.length + ' dropdowns');
+    
+    // Phone button functionality (phoneBtn already declared at top of function)
+    if (phoneBtn) {
+      phoneBtn.addEventListener('click', function() {
+        // Get phone number from placeholder in page or use default
+        const phoneLinks = document.querySelectorAll('a[href^="tel:"]');
+        const phoneNumber = phoneLinks.length > 0 
+          ? phoneLinks[0].getAttribute('href').replace('tel:', '')
+          : '[business_phone]';
+        
+        window.location.href = 'tel:' + phoneNumber;
+        console.log('[Navbar] Phone button clicked');
+      });
+    }
+    
+    console.log('[Navbar] Mobile menu initialized successfully');
+    
+    // === WHATSAPP BUTTON VISIBILITY FIX ===
+    // Ensure WhatsApp floating button is hidden on desktop and visible on mobile
+    // IMPORTANT: Only target the floating button by its class, NOT generic wa.me links
+    const handleWhatsAppVisibility = function() {
+      const whatsappBtn = document.querySelector('.whatsapp-float');
+      if (whatsappBtn) {
+        const isDesktop = window.innerWidth >= 769;
+        if (isDesktop) {
+          whatsappBtn.style.setProperty('display', 'none', 'important');
+          whatsappBtn.style.setProperty('visibility', 'hidden', 'important');
+          whatsappBtn.style.setProperty('opacity', '0', 'important');
+          whatsappBtn.style.setProperty('pointer-events', 'none', 'important');
+          console.log('[WhatsApp] Button hidden on desktop');
+        } else {
+          whatsappBtn.style.removeProperty('display');
+          whatsappBtn.style.removeProperty('visibility');
+          whatsappBtn.style.removeProperty('opacity');
+          whatsappBtn.style.removeProperty('pointer-events');
+          console.log('[WhatsApp] Button visible on mobile');
+        }
+      }
+    };
+    
+    // Run on load
+    handleWhatsAppVisibility();
+    
+    // Run on resize with debouncing
+    let resizeTimer;
+    window.addEventListener('resize', function() {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(handleWhatsAppVisibility, 100);
+    });
+  });
+})();
+
+</script>
+  
+  <main>
+    <section class="industries-overview-section" data-layout-spec="תעשיות-overview" dir="rtl">
+  <div class="industries-overview-container">
+    <div class="industries-overview-grid">
+
+      <!-- Text Column (START = RIGHT in RTL) -->
+      <div class="industries-overview-text">
+        <div class="industries-overview-label">שירותי שיווק דיגיטלי מקצועי</div>
+        <h1 class="industries-overview-heading">שיווק דיגיטלי שמבין את עולמות המקצוע</h1>
+        <div class="industries-overview-rule"></div>
+        <p class="industries-overview-lead">עסקים מקצועיים — עורכי דין, מגשרים, הד הנטרים וחברות גיוס — פועלים בסביבה שבה אמון, שיקול דעת ומומחיות הם הבסיס לכל קשר עסקי. שיווק דיגיטלי גנרי לא מספק את הצרכים הייחודיים שלהם.</p>
+        <p class="industries-overview-body">מה שמתאים לעסקי B2C — קמפיינים רועשים, הבטחות גדולות, תוכן ויראלי — עלול לפגוע במוניטין של פירמה מקצועית. לקוחות בתחומים אלה מחפשים בהירות, אמינות ועדויות לניסיון אמיתי. הם בוחנים את הנוכחות הדיגיטלית שלכם לפני שהם מרימים טלפון.</p>
+        <p class="industries-overview-body">גלי שפיר מתמחה בבניית נוכחות דיגיטלית שמשקפת את הסמכות המקצועית שלכם — אתרים שמציגים מומחיות, קידום ממומן במטה שמגיע לקהל הנכון, ואסטרטגיית שיווק דיגיטלי שמניבה לקוחות איכותיים לאורך זמן.</p>
+
+        <ul class="industries-overview-pillars">
+          <li class="industries-overview-pillar-item">
+            <span class="pillar-icon">
+              <svg data-element-type="icon" data-icon-type="svg" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.5"></circle>
+                <path d="M6 10l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+            </span>
+            <div class="pillar-content">
+              <strong>אמון ואמינות</strong>
+              <span>מסרים שמחזקים את המוניטין המקצועי שלכם</span>
+            </div>
+          </li>
+          <li class="industries-overview-pillar-item">
+            <span class="pillar-icon">
+              <svg data-element-type="icon" data-icon-type="svg" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.5"></circle>
+                <path d="M6 10l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+            </span>
+            <div class="pillar-content">
+              <strong>בהירות ודיוק</strong>
+              <span>תוכן ממוקד שמדבר לקהל המקצועי הנכון</span>
+            </div>
+          </li>
+          <li class="industries-overview-pillar-item">
+            <span class="pillar-icon">
+              <svg data-element-type="icon" data-icon-type="svg" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.5"></circle>
+                <path d="M6 10l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+            </span>
+            <div class="pillar-content">
+              <strong>שיקול דעת וסמכות</strong>
+              <span>נוכחות דיגיטלית שמשדרת מקצועיות בכל נקודת מגע</span>
+            </div>
+          </li>
+          <li class="industries-overview-pillar-item">
+            <span class="pillar-icon">
+              <svg data-element-type="icon" data-icon-type="svg" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.5"></circle>
+                <path d="M6 10l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+            </span>
+            <div class="pillar-content">
+              <strong>תוצאות מדידות</strong>
+              <span>אסטרטגיה שמביאה לקוחות איכותיים, לא רק חשיפה</span>
+            </div>
+          </li>
+        </ul>
+
+        <a href="/contact" class="industries-overview-cta">בואו נדבר על העסק שלכם</a>
+      </div>
+
+      <!-- Image Column (END = LEFT in RTL) -->
+      <div class="industries-overview-image-col">
+        <div class="industries-overview-image-frame">
+          <img data-placeholder="industries-overview-image-1" data-context="A refined, professional office or meeting room setting — clean conference table, soft natural light from large windows, neutral tones of white, grey and warm wood. Two professionals in formal attire reviewing documents together, conveying trust, discretion, and high-level advisory work. Suitable for a digital marketing firm targeting law firms, mediators, headhunters and recruitment companies in Israel." width="600" height="720" src="/assets/site-industries-overview-image-1.webp" alt="סביבת עבודה מקצועית — ישיבת ייעוץ עסקי" class="industries-overview-img">
+          <div class="industries-overview-image-badge">
+            <span class="badge-number">4+</span>
+            <span class="badge-text">תחומי מקצוע<br>מובילים</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="industries-sectors-section" dir="rtl" data-layout-spec="תעשיות-sectors">
+  <div class="industries-sectors-container">
+    <div class="industries-sectors-header">
+      <span class="industries-sectors-label">תחומי התמחות</span>
+      <h2 class="industries-sectors-title">אנחנו מכירים את הענף שלך</h2>
+      <p class="industries-sectors-subtitle">שיווק דיגיטלי אפקטיבי מתחיל בהבנה עמוקה של עולם הלקוח. כל תחום מגיע עם מחזורי קבלת החלטות, אותות אמינות וציפיות שונות — ואנחנו יודעים לדבר בשפה הנכונה.</p>
+    </div>
+    <div class="industries-sectors-grid">
+
+      <!-- Card 1: Law Firms -->
+      <article class="industries-sector-card">
+        <div class="industries-sector-card-image-wrapper">
+          <img data-placeholder="industries-sectors-image-1" data-context="Professional law office interior in Israel, polished wooden desk with legal books, gavel, and papers, warm neutral tones, clean and authoritative atmosphere, no people, top-down or wide angle" width="600" height="400" src="/assets/site-industries-sectors-image-1.webp" alt="משרד עורכי דין מקצועי">
+        </div>
+        <div class="industries-sector-card-body">
+          <div class="industries-sector-icon">
+            <svg data-element-type="icon" data-icon-type="svg" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M3 6l9-3 9 3"></path>
+              <path d="M3 6v12l9 3 9-3V6"></path>
+              <path d="M12 3v18"></path>
+              <path d="M3 12h18"></path>
+            </svg>
+          </div>
+          <h3 class="industries-sector-card-title">משרדי עורכי דין</h3>
+          <p class="industries-sector-context">לקוחות פוטנציאליים מחפשים עורך דין בגוגל בדיוק ברגע שהם זקוקים לייצוג — תהליך הבחירה מהיר, רגשי ומבוסס על אמינות.</p>
+          <p class="industries-sector-opportunity">SEO ממוקד תחום, ניהול מוניטין דיגיטלי ופרסום ממומן במטא יכולים להניב זרם קבוע של פניות איכותיות ממשרדכם.</p>
+        </div>
+      </article>
+
+      <!-- Card 2: Mediation -->
+      <article class="industries-sector-card">
+        <div class="industries-sector-card-image-wrapper">
+          <img data-placeholder="industries-sectors-image-2" data-context="Calm mediation meeting room in Israel, round table with two chairs, soft natural light, neutral colors, plants, sense of resolution and trust, no people" width="600" height="400" src="/assets/site-industries-sectors-image-2.webp" alt="חדר גישור מקצועי">
+        </div>
+        <div class="industries-sector-card-body">
+          <div class="industries-sector-icon">
+            <svg data-element-type="icon" data-icon-type="svg" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="M8 12h8"></path>
+              <path d="M12 8v8"></path>
+            </svg>
+          </div>
+          <h3 class="industries-sector-card-title">מגשרים ומשרדי גישור</h3>
+          <p class="industries-sector-context">הגישור הוא תחום שבו האמון הוא הכל — לקוחות מחפשים מגשר שמרגיש ניטרלי, מנוסה ואמין, ועושים זאת לעיתים קרובות לאחר חיפוש מקוון ממושך.</p>
+          <p class="industries-sector-opportunity">בניית נוכחות דיגיטלית עם תוכן מקצועי ממוקד ו-SEO מקומי תמצב אתכם כבחירה הברורה בעיני מי שמחפש פתרון מחוץ לבית המשפט.</p>
+        </div>
+      </article>
+
+      <!-- Card 3: Executive Search / Headhunting -->
+      <article class="industries-sector-card">
+        <div class="industries-sector-card-image-wrapper">
+          <img data-placeholder="industries-sectors-image-3" data-context="Executive headhunter reviewing candidate profiles on a laptop in a sleek modern Israeli office, professional setting, clean desk, subtle branding elements, no faces visible" width="600" height="400" src="/assets/site-industries-sectors-image-3.webp" alt="חברת הד הנטינג מקצועית">
+        </div>
+        <div class="industries-sector-card-body">
+          <div class="industries-sector-icon">
+            <svg data-element-type="icon" data-icon-type="svg" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="11" cy="11" r="8"></circle>
+              <path d="M21 21l-4.35-4.35"></path>
+            </svg>
+          </div>
+          <h3 class="industries-sector-card-title">הד הנטרים וחיפוש מנהלים</h3>
+          <p class="industries-sector-context">חברות הד הנטינג מתחרות על לקוחות ארגוניים שמצפים לדיסקרטיות, מהירות ורקורד מוכח — והחלטות שותפות לרוב מתקבלות לאחר מחקר מקוון מעמיק.</p>
+          <p class="industries-sector-opportunity">קידום ממומן ממוקד ב-LinkedIn ובמטא, יחד עם אתר שמציג הצלחות ומתודולוגיה, יוצרים את הרושם הראשוני הנכון מול מקבלי החלטות.</p>
+        </div>
+      </article>
+
+      <!-- Card 4: Recruitment Companies -->
+      <article class="industries-sector-card">
+        <div class="industries-sector-card-image-wrapper">
+          <img data-placeholder="industries-sectors-image-4" data-context="Modern recruitment agency office in Israel, HR professional reviewing resumes at a clean desk, organized workspace, professional atmosphere, neutral tones, no recognizable faces" width="600" height="400" src="/assets/site-industries-sectors-image-4.webp" alt="חברת גיוס מודרנית">
+        </div>
+        <div class="industries-sector-card-body">
+          <div class="industries-sector-icon">
+            <svg data-element-type="icon" data-icon-type="svg" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+            </svg>
+          </div>
+          <h3 class="industries-sector-card-title">חברות גיוס</h3>
+          <p class="industries-sector-context">חברות גיוס פועלות בשוק תחרותי שבו מעסיקים ומועמדים כאחד בוחנים את המוניטין הדיגיטלי לפני שהם בוחרים עם מי לעבוד.</p>
+          <p class="industries-sector-opportunity">אסטרטגיית שיווק דיגיטלי משולבת — כולל קידום אורגני, פרסום ממומן ותוכן מקצועי — תגדיל את זרם הלידים משני צידי המשוואה.</p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section class="industries-pain-points-section" data-layout-spec="תעשיות-pain-points" dir="rtl">
+  <div class="pain-points-container">
+
+    <div class="pain-points-header">
+      <span class="pain-points-eyebrow">האתגרים שאנחנו פותרים</span>
+      <h2 class="pain-points-title">למה עסקים מקצועיים מפסידים לקוחות באינטרנט?</h2>
+      <p class="pain-points-subtitle">עורכי דין, מגשרים, הד-הנטרים וחברות גיוס — כולם חולקים אותם כאבים דיגיטליים. הנה הבעיות הנפוצות ביותר, ואיך אנחנו פותרים אותן.</p>
+    </div>
+
+    <div class="pain-points-grid">
+
+      <article class="pain-card">
+        <div class="pain-card-inner">
+          <div class="pain-side">
+            <div class="pain-label">הבעיה</div>
+            <div class="pain-icon">
+              <svg data-element-type="icon" data-icon-type="svg" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+            </div>
+            <h3 class="pain-title">נוכחות דיגיטלית חלשה ולא מבדלת</h3>
+            <p class="pain-desc">האתר שלכם נראה כמו כל עסק אחר בתחום. לקוחות פוטנציאליים לא מבינים מה מייחד אתכם ועוברים הלאה.</p>
+          </div>
+          <div class="divider-line" aria-hidden="true"></div>
+          <div class="solution-side">
+            <div class="solution-label">הפתרון</div>
+            <div class="solution-marker">
+              <svg data-element-type="icon" data-icon-type="svg" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            </div>
+            <p class="solution-desc">בניית זהות דיגיטלית ברורה ומקצועית — מיתוג, מסרים ועיצוב שמבדלים אתכם מהמתחרים ומשדרים סמכות.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="pain-card">
+        <div class="pain-card-inner">
+          <div class="pain-side">
+            <div class="pain-label">הבעיה</div>
+            <div class="pain-icon">
+              <svg data-element-type="icon" data-icon-type="svg" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+            </div>
+            <h3 class="pain-title">מסרים מפוצלים וחסרי עקביות</h3>
+            <p class="pain-desc">הודעות שונות באתר, ברשתות החברתיות ובפרסומות יוצרות בלבול. הלקוח לא מבין מה אתם מציעים ולמה לבחור בכם.</p>
+          </div>
+          <div class="divider-line" aria-hidden="true"></div>
+          <div class="solution-side">
+            <div class="solution-label">הפתרון</div>
+            <div class="solution-marker">
+              <svg data-element-type="icon" data-icon-type="svg" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            </div>
+            <p class="solution-desc">גיבוש אסטרטגיה דיגיטלית אחידה עם מסרים ממוקדים שמדברים ישירות לקהל היעד שלכם — בכל ערוץ, בכל פלטפורמה.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="pain-card">
+        <div class="pain-card-inner">
+          <div class="pain-side">
+            <div class="pain-label">הבעיה</div>
+            <div class="pain-icon">
+              <svg data-element-type="icon" data-icon-type="svg" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            </div>
+            <h3 class="pain-title">נראות נמוכה בגוגל</h3>
+            <p class="pain-desc">לקוחות מחפשים שירותים כמו שלכם כל יום — אבל לא מוצאים אתכם. המתחרים מופיעים ראשונים ואתם נשארים מאחור.</p>
+          </div>
+          <div class="divider-line" aria-hidden="true"></div>
+          <div class="solution-side">
+            <div class="solution-label">הפתרון</div>
+            <div class="solution-marker">
+              <svg data-element-type="icon" data-icon-type="svg" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            </div>
+            <p class="solution-desc">קידום אורגני (SEO) מקצועי המותאם לתחום שלכם — אופטימיזציה טכנית, תוכן ממוקד מילות מפתח ובניית סמכות דומיין.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="pain-card">
+        <div class="pain-card-inner">
+          <div class="pain-side">
+            <div class="pain-label">הבעיה</div>
+            <div class="pain-icon">
+              <svg data-element-type="icon" data-icon-type="svg" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+            </div>
+            <h3 class="pain-title">לידים לא רלוונטיים שמבזבזים זמן</h3>
+            <p class="pain-desc">הפרסומות מביאות פניות, אבל רוב הפונים לא מתאימים — לא בתקציב, לא בצורך, לא בשלב הנכון. תקציב הפרסום מתבזבז.</p>
+          </div>
+          <div class="divider-line" aria-hidden="true"></div>
+          <div class="solution-side">
+            <div class="solution-label">הפתרון</div>
+            <div class="solution-marker">
+              <svg data-element-type="icon" data-icon-type="svg" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            </div>
+            <p class="solution-desc">קמפיינים ממומנים במטה עם טרגוט מדויק לקהל העסקי שלכם — פרסום שמביא לקוחות איכותיים ומוכנים לפעולה.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="pain-card">
+        <div class="pain-card-inner">
+          <div class="pain-side">
+            <div class="pain-label">הבעיה</div>
+            <div class="pain-icon">
+              <svg data-element-type="icon" data-icon-type="svg" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+            </div>
+            <h3 class="pain-title">אתר מיושן שלא משקף את המומחיות שלכם</h3>
+            <p class="pain-desc">האתר הנוכחי נבנה לפני שנים, לא מותאם למובייל, טוען לאט ולא מעביר את רמת המקצועיות שאתם מציגים בפגישות.</p>
+          </div>
+          <div class="divider-line" aria-hidden="true"></div>
+          <div class="solution-side">
+            <div class="solution-label">הפתרון</div>
+            <div class="solution-marker">
+              <svg data-element-type="icon" data-icon-type="svg" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            </div>
+            <p class="solution-desc">בניית אתר מקצועי, מהיר ומותאם לנייד — שמציג את הניסיון שלכם, בונה אמון ומניע מבקרים ליצור קשר.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="pain-card">
+        <div class="pain-card-inner">
+          <div class="pain-side">
+            <div class="pain-label">הבעיה</div>
+            <div class="pain-icon">
+              <svg data-element-type="icon" data-icon-type="svg" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+            </div>
+            <h3 class="pain-title">קושי להגיע לקהל העסקי הנכון</h3>
+            <p class="pain-desc">שיווק דיגיטלי גנרי לא עובד לעסקים B2B מקצועיים. נדרשת גישה ממוקדת שמדברת ישירות לעסקים ולמקבלי החלטות.</p>
+          </div>
+          <div class="divider-line" aria-hidden="true"></div>
+          <div class="solution-side">
+            <div class="solution-label">הפתרון</div>
+            <div class="solution-marker">
+              <svg data-element-type="icon" data-icon-type="svg" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            </div>
+            <p class="solution-desc">אסטרטגיה דיגיטלית B2B מותאמת אישית — שיווק דיגיטלי שמכיר את עולם עורכי הדין, המגשרים וחברות הגיוס מבפנים.</p>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+  </div>
+</section>
+
+<section class="industries-differentiators-section" data-layout-spec="תעשיות-differentiators" dir="rtl">
+  <div class="diff-container">
+    <div class="diff-header">
+      <span class="diff-eyebrow">למה גלי שפיר?</span>
+      <h2 class="diff-title">שיווק דיגיטלי שמדבר את שפת הלקוח המקצועי</h2>
+      <p class="diff-subtitle">ההבדל בין קמפיין שמייצר לידים איכותיים לבין קמפיין שמבזבז תקציב — הוא הבנת הענף.</p>
+    </div>
+
+    <div class="diff-matrix">
+      <div class="diff-col-headers">
+        <div class="diff-col-header diff-col-generic">
+          <span class="diff-col-icon"><i class="fa fa-times-circle"></i></span>
+          <span>שיווק דיגיטלי גנרי</span>
+        </div>
+        <div class="diff-col-header diff-col-strategic">
+          <span class="diff-col-icon"><i class="fa fa-check-circle"></i></span>
+          <span>גישה אסטרטגית למקצועות חופשיים</span>
+        </div>
+      </div>
+
+      <div class="diff-rows">
+
+        <div class="diff-row">
+          <div class="diff-row-label">
+            <span class="diff-row-number">01</span>
+            <span class="diff-row-topic">קהל יעד</span>
+          </div>
+          <div class="diff-row-content">
+            <div class="diff-cell diff-cell-generic">
+              <div class="diff-cell-inner">
+                <i class="fa fa-times diff-icon-bad"></i>
+                <p>פניה רחבה לכל מי שמחפש שירות משפטי או גיוס — ללא סינון לפי כוונת רכישה, גודל חברה או שלב בתהליך.</p>
+              </div>
+            </div>
+            <div class="diff-cell diff-cell-strategic">
+              <div class="diff-cell-inner">
+                <i class="fa fa-check diff-icon-good"></i>
+                <p>מיקוד מדויק בהגדרות קהל מותאמות לתחום — עורכי דין, מגשרים, חברות גיוס — לפי תפקיד, ענף ושלב בפאנל.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="diff-divider"></div>
+
+        <div class="diff-row">
+          <div class="diff-row-label">
+            <span class="diff-row-number">02</span>
+            <span class="diff-row-topic">תוכן ומסרים</span>
+          </div>
+          <div class="diff-row-content">
+            <div class="diff-cell diff-cell-generic">
+              <div class="diff-cell-inner">
+                <i class="fa fa-times diff-icon-bad"></i>
+                <p>מסרים שיווקיים כלליים שאינם מתייחסים לאתגרים הספציפיים של עולם המשפט, הגישור או שוק ההון האנושי.</p>
+              </div>
+            </div>
+            <div class="diff-cell diff-cell-strategic">
+              <div class="diff-cell-inner">
+                <i class="fa fa-check diff-icon-good"></i>
+                <p>תוכן שמדבר בשפת הלקוח — טרמינולוגיה מקצועית, נושאים רלוונטיים, ומסרים שבונים סמכות ואמינות בענף.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="diff-divider"></div>
+
+        <div class="diff-row">
+          <div class="diff-row-label">
+            <span class="diff-row-number">03</span>
+            <span class="diff-row-topic">SEO ונוכחות אורגנית</span>
+          </div>
+          <div class="diff-row-content">
+            <div class="diff-cell diff-cell-generic">
+              <div class="diff-cell-inner">
+                <i class="fa fa-times diff-icon-bad"></i>
+                <p>אופטימיזציה לביטויים גנריים בתחרות גבוהה — ללא התמקדות בכוונת חיפוש ספציפית לשירותים מקצועיים.</p>
+              </div>
+            </div>
+            <div class="diff-cell diff-cell-strategic">
+              <div class="diff-cell-inner">
+                <i class="fa fa-check diff-icon-good"></i>
+                <p>אסטרטגיית SEO ממוקדת לביטויים בעלי כוונת רכישה גבוהה — המביאה לידים איכותיים ולא רק תנועה.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="diff-divider"></div>
+
+        <div class="diff-row">
+          <div class="diff-row-label">
+            <span class="diff-row-number">04</span>
+            <span class="diff-row-topic">פרסום ממומן במטה</span>
+          </div>
+          <div class="diff-row-content">
+            <div class="diff-cell diff-cell-generic">
+              <div class="diff-cell-inner">
+                <i class="fa fa-times diff-icon-bad"></i>
+                <p>קמפיינים שמייעלים לפי כמות קליקים או חשיפות — ללא קשר לאיכות הפנייה או לתהליך המכירה הארוך.</p>
+              </div>
+            </div>
+            <div class="diff-cell diff-cell-strategic">
+              <div class="diff-cell-inner">
+                <i class="fa fa-check diff-icon-good"></i>
+                <p>קמפיינים בנויים לאורך תהליך קבלת ההחלטות — מודעות, שיקול, ופנייה — עם מעקב אחר איכות הלידים.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="diff-divider"></div>
+
+        <div class="diff-row">
+          <div class="diff-row-label">
+            <span class="diff-row-number">05</span>
+            <span class="diff-row-topic">בניית אתרים</span>
+          </div>
+          <div class="diff-row-content">
+            <div class="diff-cell diff-cell-generic">
+              <div class="diff-cell-inner">
+                <i class="fa fa-times diff-icon-bad"></i>
+                <p>אתר גנרי עם תבנית אחידה — ללא התאמה לאמינות המצופה מעורך דין, מגשר או חברת גיוס מובילה.</p>
+              </div>
+            </div>
+            <div class="diff-cell diff-cell-strategic">
+              <div class="diff-cell-inner">
+                <i class="fa fa-check diff-icon-good"></i>
+                <p>אתר שמשקף מקצועיות, בונה אמון מהרגע הראשון ומותאם להמרת מבקרים לפגישות ייעוץ.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="diff-divider"></div>
+
+        <div class="diff-row">
+          <div class="diff-row-label">
+            <span class="diff-row-number">06</span>
+            <span class="diff-row-topic">מדידה ותוצאות</span>
+          </div>
+          <div class="diff-row-content">
+            <div class="diff-cell diff-cell-generic">
+              <div class="diff-cell-inner">
+                <i class="fa fa-times diff-icon-bad"></i>
+                <p>דיווח על מדדי וניטי — חשיפות, לייקים, קליקים — שאינם מתורגמים לצמיחה עסקית מדידה.</p>
+              </div>
+            </div>
+            <div class="diff-cell diff-cell-strategic">
+              <div class="diff-cell-inner">
+                <i class="fa fa-check diff-icon-good"></i>
+                <p>מדדי ביצוע עסקיים: עלות ליד מוסמך, שיעור המרה לפגישה, החזר על השקעה — שקיפות מלאה.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="diff-footer-note">
+      <div class="diff-footer-inner">
+        <i class="fa fa-lightbulb-o diff-footer-icon"></i>
+        <p>עסקים במקצועות חופשיים זקוקים לשיווק דיגיטלי שמבין את ה-<strong>מחזור המכירה הארוך</strong>, את חשיבות <strong>האמינות</strong> ואת הצורך ב<strong>לידים איכותיים</strong> — לא רק בנפח.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="industries-success-stories-section" data-layout-spec="תעשיות-success-stories" dir="rtl">
+  <div class="iss-container">
+
+    <!-- Section Header -->
+    <div class="iss-header">
+      <span class="iss-eyebrow">סיפורי הצלחה</span>
+      <h2 class="iss-title">תוצאות אמיתיות לעסקים מקצועיים</h2>
+      <p class="iss-subtitle">שיווק דיגיטלי שמותאם לעולם המקצועי — אסטרטגיה ברורה, ביצוע מדויק, ותוצאות שניתן למדוד.</p>
+    </div>
+
+    <!-- Story Cards -->
+    <div class="iss-cards-grid">
+
+      <!-- Card 1: Law Firm -->
+      <article class="iss-card">
+        <div class="iss-card-image-wrap">
+          <img data-placeholder="industries-success-stories-image-1" data-context="Professional law firm office in Israel: clean desk with legal documents, a laptop showing a modern Hebrew website, bookshelf with law books in background. Warm, authoritative lighting. Realistic mockup thumbnail feel." width="600" height="400" src="/assets/site-industries-success-stories-image-1.webp" alt="משרד עורכי דין — נוכחות דיגיטלית מחודשת">
+        </div>
+        <div class="iss-card-body">
+          <div class="iss-card-tag">עורכי דין</div>
+          <h3 class="iss-card-title">משרד עורכי דין — מנהרת הנראות</h3>
+          <p class="iss-card-scenario">משרד עורכי דין מסחרי בתל אביב התקשה להופיע בחיפושים רלוונטיים ולהבדיל את עצמו מהמתחרים. לא הייתה אסטרטגיה דיגיטלית, האתר היה ישן, ולא הגיעו פניות מהרשת.</p>
+          <div class="iss-service-mix">
+            <span class="iss-service-label">שירותים שניתנו:</span>
+            <div class="iss-service-tags">
+              <span class="iss-tag">בניית אתר</span>
+              <span class="iss-tag">SEO</span>
+              <span class="iss-tag">אסטרטגיה דיגיטלית</span>
+            </div>
+          </div>
+          <div class="iss-divider"></div>
+          <div class="iss-impact">
+            <div class="iss-impact-item">
+              <strong class="iss-impact-number">+210%</strong>
+              <span class="iss-impact-desc">תנועה אורגנית תוך 6 חודשים</span>
+            </div>
+            <div class="iss-impact-item">
+              <strong class="iss-impact-number">x3</strong>
+              <span class="iss-impact-desc">פניות חדשות מהאתר</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 2: Mediator -->
+      <article class="iss-card">
+        <div class="iss-card-image-wrap">
+          <img data-placeholder="industries-success-stories-image-2" data-context="Professional mediator workspace in Israel: calm, minimal office with a round table, two chairs, soft natural light through a window, a laptop showing a clean Hebrew landing page with a contact form. Realistic professional mockup." width="600" height="400" src="/assets/site-industries-success-stories-image-2.webp" alt="מגשרת — מיצוב מקצועי ברשת">
+        </div>
+        <div class="iss-card-body">
+          <div class="iss-card-tag">מגשרים</div>
+          <h3 class="iss-card-title">מגשרת עצמאית — מיצוב ויצירת לידים</h3>
+          <p class="iss-card-scenario">מגשרת מוסמכת עם ניסיון רב לא הצליחה לבנות נוכחות דיגיטלית שתשקף את מקצועיותה. רוב הלקוחות הגיעו מפה לאוזן בלבד, ולא הייתה לה שום תשתית שיווקית.</p>
+          <div class="iss-service-mix">
+            <span class="iss-service-label">שירותים שניתנו:</span>
+            <div class="iss-service-tags">
+              <span class="iss-tag">בניית אתר</span>
+              <span class="iss-tag">פרסום ממומן במטה</span>
+              <span class="iss-tag">קידום ממומן</span>
+            </div>
+          </div>
+          <div class="iss-divider"></div>
+          <div class="iss-impact">
+            <div class="iss-impact-item">
+              <strong class="iss-impact-number">18</strong>
+              <span class="iss-impact-desc">פניות חדשות בחודש הראשון</span>
+            </div>
+            <div class="iss-impact-item">
+              <strong class="iss-impact-number">-40%</strong>
+              <span class="iss-impact-desc">עלות לליד מול ממוצע ענפי</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 3: Recruitment Firm -->
+      <article class="iss-card">
+        <div class="iss-card-image-wrap">
+          <img data-placeholder="industries-success-stories-image-3" data-context="Modern Israeli recruitment agency office: HR professional reviewing resumes on a dual monitor setup, LinkedIn open on screen, professional and clean workspace, warm ambient lighting. Realistic business mockup thumbnail." width="600" height="400" src="/assets/site-industries-success-stories-image-3.webp" alt="חברת גיוס — שיפור איכות לידים">
+        </div>
+        <div class="iss-card-body">
+          <div class="iss-card-tag">חברות גיוס</div>
+          <h3 class="iss-card-title">חברת גיוס — שיפור איכות הלידים</h3>
+          <p class="iss-card-scenario">חברת הד-האנטינג השקיעה תקציב פרסום משמעותי אך קיבלה פניות לא רלוונטיות. הקמפיינים לא היו ממוקדים, ודפי הנחיתה לא המירו את הקהל המקצועי הנכון.</p>
+          <div class="iss-service-mix">
+            <span class="iss-service-label">שירותים שניתנו:</span>
+            <div class="iss-service-tags">
+              <span class="iss-tag">אסטרטגיה דיגיטלית</span>
+              <span class="iss-tag">פרסום ממומן</span>
+              <span class="iss-tag">SEO</span>
+            </div>
+          </div>
+          <div class="iss-divider"></div>
+          <div class="iss-impact">
+            <div class="iss-impact-item">
+              <strong class="iss-impact-number">+65%</strong>
+              <span class="iss-impact-desc">שיפור באיכות הלידים</span>
+            </div>
+            <div class="iss-impact-item">
+              <strong class="iss-impact-number">x2.4</strong>
+              <span class="iss-impact-desc">החזר על השקעת הפרסום</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- Bottom CTA -->
+    <div class="iss-cta-block">
+      <p class="iss-cta-text">רוצים לראות איך אסטרטגיה דיגיטלית מדויקת יכולה לשנות את התוצאות שלכם?</p>
+      <a href="#contact" class="iss-btn-primary">בואו נדבר</a>
+    </div>
+
+  </div>
+</section>
+  </main>
+  
+  <footer class="site-footer" dir="rtl">
+  <div class="footer-main">
+    <div class="footer-container">
+      <div class="footer-grid">
+
+        <!-- Company Info -->
+        <div class="footer-col footer-col--brand">
+          <div class="footer-logo-wrap">
+            <img src="/assets/business-logo.webp" alt="גלי שפיר" class="logo" />
+          </div>
+          <p class="footer-tagline">אסטרטגיה דיגיטלית חדה. תוצאות מדידות. שותפות אמיתית.</p>
+          <div class="footer-social">
+            <a href="[facebook_handle]" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="[instagram_handle]" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="[whatsapp_handle]" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-col">
+          <h4 class="footer-heading">ניווט מהיר</h4>
+          <ul class="footer-links">
+            <li><a href="/services">שירותים</a></li>
+            <li><a href="/industries">תעשיות</a></li>
+            <li><a href="/about">אודות</a></li>
+            <li><a href="/contact">צור קשר</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="footer-col">
+          <h4 class="footer-heading">יצירת קשר</h4>
+          <ul class="footer-contact">
+            <li>
+              <span class="contact-icon"><i class="fas fa-envelope"></i></span>
+              <span class="contact-text"><a href="mailto:[business_email]">[business_email]</a></span>
+            </li>
+            <li>
+              <span class="contact-icon"><i class="fas fa-phone"></i></span>
+              <span class="contact-text"><a href="tel:[business_phone]">[business_phone]</a></span>
+            </li>
+            <li><a href="/"><span class="contact-icon"><i class="fas fa-map-marker-alt"></i></span>
+              <span class="contact-text">[business_address]</span></a></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Bar -->
+  <div class="footer-bottom">
+    <div class="footer-container">
+      <div class="footer-bottom-inner">
+        <p class="footer-copyright">© 2026 גלי שפיר. כל הזכויות שמורות.</p>
+        <div class="footer-legal">
+          <a href="/privacy">מדיניות פרטיות</a>
+          <span class="footer-divider"></span>
+          <a href="/terms">תנאי שימוש</a>
+          <span class="footer-divider"></span>
+          <a href="/accessibility">נגישות</a>
+          <span class="footer-divider"></span>
+          <a href="https://zappy5.com" target="_blank" class="zappy-attribution">נוצר באמצעות Zappy</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+  
+  <a href="https://wa.me/[whatsapp_handle]" class="whatsapp-float" aria-label="WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+  
+  <div data-integration="accessibility:toolbar"></div>
+
+    <script src="/script.js"></script>
+
+    <script id="zappy-mobile-submenu-script">
+    (function() {
+      function initMobileSubmenuToggles() {
+        if (window.innerWidth > 768) {
+          document.querySelectorAll('.mobile-submenu-toggle').forEach(function(btn) { btn.remove(); });
+          document.querySelectorAll('.sub-menu.mobile-expanded').forEach(function(menu) { menu.classList.remove('mobile-expanded'); });
+          return;
+        }
+        var items = document.querySelectorAll('.nav-menu li:has(.sub-menu), nav li:has(.sub-menu), .navbar li:has(.sub-menu), #navMenu li:has(.sub-menu)');
+        items.forEach(function(li) {
+          if (li.querySelector('.mobile-submenu-toggle')) return;
+          var submenu = li.querySelector('.sub-menu');
+          var parentLink = li.querySelector(':scope > a');
+          if (!submenu || !parentLink) return;
+          var toggleBtn = document.createElement('button');
+          toggleBtn.className = 'mobile-submenu-toggle';
+          toggleBtn.setAttribute('aria-label', 'Toggle submenu');
+          toggleBtn.setAttribute('type', 'button');
+          parentLink.insertAdjacentElement('afterend', toggleBtn);
+          toggleBtn.addEventListener('click', function(e) {
+            e.preventDefault(); e.stopPropagation();
+            document.querySelectorAll('.sub-menu.mobile-expanded').forEach(function(menu) {
+              if (menu !== submenu) { menu.classList.remove('mobile-expanded'); var t = menu.parentElement.querySelector('.mobile-submenu-toggle'); if(t) t.classList.remove('expanded'); }
+            });
+            submenu.classList.toggle('mobile-expanded');
+            toggleBtn.classList.toggle('expanded');
+          });
+        });
+      }
+      if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', initMobileSubmenuToggles); }
+      else { initMobileSubmenuToggles(); }
+      var resizeTimer; window.addEventListener('resize', function() { clearTimeout(resizeTimer); resizeTimer = setTimeout(initMobileSubmenuToggles, 250); });
+      // Re-initialize when mobile menu becomes visible (MutationObserver)
+      var observer = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
+          if (mutation.type === 'attributes') {
+            var target = mutation.target;
+            if (target.classList && (target.classList.contains('active') || target.classList.contains('open'))) {
+              setTimeout(initMobileSubmenuToggles, 100);
+            }
+          }
+        });
+      });
+      setTimeout(function() {
+        document.querySelectorAll('.mobile-menu, .nav-menu, #navMenu, nav').forEach(function(menu) {
+          observer.observe(menu, { attributes: true, attributeFilter: ['class', 'style'] });
+        });
+      }, 500);
+    })();
+    </script>
+
+    <script id="zappy-mobile-lang-menu-script">
+    (function() {
+      function initMobileLangMenu() {
+        if (window.innerWidth > 768) {
+          var existingMenu = document.querySelector('.mobile-lang-menu');
+          if (existingMenu) existingMenu.remove();
+          return;
+        }
+        if (document.querySelector('.mobile-lang-menu')) return;
+        var switcher = document.querySelector('.lang-switcher');
+        if (!switcher) return;
+        var dropdown = switcher.querySelector('.lang-switcher-dropdown');
+        if (!dropdown) return;
+        var options = dropdown.querySelectorAll('.lang-option');
+        if (options.length === 0) return;
+        var navMenu = document.getElementById('navMenu') || document.querySelector('.nav-menu') || document.querySelector('nav ul');
+        if (!navMenu) return;
+        var currentLang = document.documentElement.lang || 'en';
+        var langConfigs = {
+          he: {name:'עברית',flag:'https://api.iconify.design/circle-flags/il.svg'},
+          en: {name:'English',flag:'https://api.iconify.design/circle-flags/us.svg'},
+          ar: {name:'العربية',flag:'https://api.iconify.design/circle-flags/sa.svg'},
+          fr: {name:'Français',flag:'https://api.iconify.design/circle-flags/fr.svg'},
+          es: {name:'Español',flag:'https://api.iconify.design/circle-flags/es.svg'},
+          de: {name:'Deutsch',flag:'https://api.iconify.design/circle-flags/de.svg'},
+          ru: {name:'Русский',flag:'https://api.iconify.design/circle-flags/ru.svg'},
+          zh: {name:'中文',flag:'https://api.iconify.design/circle-flags/cn.svg'},
+          ja: {name:'日本語',flag:'https://api.iconify.design/circle-flags/jp.svg'},
+          pt: {name:'Português',flag:'https://api.iconify.design/circle-flags/br.svg'},
+          it: {name:'Italiano',flag:'https://api.iconify.design/circle-flags/it.svg'},
+          ko: {name:'한국어',flag:'https://api.iconify.design/circle-flags/kr.svg'}
+        };
+        var container = document.createElement('div');
+        container.className = 'mobile-lang-menu';
+        var currentConfig = langConfigs[currentLang] || {name:currentLang,flag:''};
+        var toggleBtn = document.createElement('button');
+        toggleBtn.className = 'mobile-lang-toggle';
+        toggleBtn.type = 'button';
+        var currentFlagHtml = currentConfig.flag ? '<img src="' + currentConfig.flag + '" width="20" height="20" alt="" style="border-radius:50%;margin-right:8px;margin-left:8px;">' : '';
+        toggleBtn.innerHTML = currentFlagHtml + currentConfig.name;
+        container.appendChild(toggleBtn);
+        var optionsDiv = document.createElement('div');
+        optionsDiv.className = 'mobile-lang-options';
+        var currentLink = document.createElement('a');
+        currentLink.className = 'mobile-lang-option active';
+        currentLink.href = '#';
+        currentLink.innerHTML = currentFlagHtml + currentConfig.name;
+        optionsDiv.appendChild(currentLink);
+        options.forEach(function(opt) {
+          var link = document.createElement('a');
+          link.className = 'mobile-lang-option';
+          link.href = opt.getAttribute('href');
+          link.innerHTML = opt.innerHTML;
+          optionsDiv.appendChild(link);
+        });
+        container.appendChild(optionsDiv);
+        navMenu.appendChild(container);
+        toggleBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          toggleBtn.classList.toggle('expanded');
+          optionsDiv.classList.toggle('expanded');
+        });
+      }
+      if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', initMobileLangMenu); }
+      else { initMobileLangMenu(); }
+      window.addEventListener('resize', function() { clearTimeout(window._mlrt); window._mlrt = setTimeout(initMobileLangMenu, 250); });
+    })();
+    </script>
+</body>
+</html>
