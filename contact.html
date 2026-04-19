@@ -241,7 +241,7 @@
     <link rel="icon" type="image/png" sizes="512x512" href="/assets/favicon-512x512.png">
     <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
     <!-- Cookie Consent -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vanilla-cookieconsent@3/dist/cookieconsent.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vanilla-cookieconsent@3/dist/cookieconsent.css">
     <script src="https://cdn.jsdelivr.net/npm/vanilla-cookieconsent@3/dist/cookieconsent.umd.js"></script>
     <!-- Mickidum Accessibility Toolbar -->
     <script src="https://cdn.jsdelivr.net/gh/mickidum/acc_toolbar/acctoolbar/acctoolbar.min.js"></script>
@@ -343,7 +343,7 @@
     </svg>
   </button>
 
-  <button class="phone-header-btn" data-phone="[business_phone]" aria-label="Call">
+  <button class="phone-header-btn" data-phone="0549702722" aria-label="Call">
     <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
       <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
     </svg>
@@ -352,7 +352,7 @@
   <div class="nav-container">
     <div class="nav-right-group"><div class="nav-brand">
       <a href="/" class="logo-link">
-        <img src="/assets/business-logo.webp" alt="גלי שפיר" class="logo" />
+        <img src="/assets/business-logo.webp" alt="גלי שפיר" class="logo">
       </a>
     </div><ul class="nav-menu" id="navMenu"><li><a href="/services">שירותים</a></li><li><a href="/industries">תעשיות</a></li><li><a href="/about">אודות</a></li></ul></div>
 
@@ -746,7 +746,7 @@
         const phoneLinks = document.querySelectorAll('a[href^="tel:"]');
         const phoneNumber = phoneLinks.length > 0 
           ? phoneLinks[0].getAttribute('href').replace('tel:', '')
-          : '[business_phone]';
+          : '0549702722';
         
         window.location.href = 'tel:' + phoneNumber;
         console.log('[Navbar] Phone button clicked');
@@ -793,18 +793,18 @@
 </script>
   
   <main>
-    <section class="contact-intro-section" data-layout-spec="צור קשר-intro" dir="rtl">
+    <section class="contact-intro-section" data-layout-spec="צור קשר-intro" dir="rtl" id="contact-intro-section">
   <div class="contact-intro-container">
     <div class="contact-intro-inner">
       <div class="contact-intro-text-block">
-        <span class="contact-intro-label">צור קשר</span>
-        <h1 class="contact-intro-heading">נשמח לשמוע ממך</h1>
+        <p><span class="contact-intro-label">צור קשר</span>
+        </p><h1 class="contact-intro-heading" >אשמח לשמוע ממך</h1>
         <div class="contact-intro-divider"></div>
         <p class="contact-intro-lead">בין אם אתם מחפשים לבנות אתר מקצועי, לשפר את הדירוג בגוגל, לנהל קמפיינים ממומנים במטא, או לגבש אסטרטגיה דיגיטלית כוללת — זה המקום הנכון להתחיל.</p>
         <p class="contact-intro-body">אנחנו עובדים עם עורכי דין, מגשרים, חברות גיוס וחברות הד-האנטינג שמחפשים שותף דיגיטלי מקצועי שמביא תוצאות. השיחה הראשונה היא תמיד ישירה, ממוקדת ועסקית.</p>
         <div class="contact-intro-cta-row">
-          <a href="#contact-form" class="btn-primary contact-intro-btn">שלחו הודעה</a>
-          <a href="tel:[business_phone]" class="btn-secondary contact-intro-btn-secondary">
+          <a href="#contact-form" class="btn-primary contact-intro-btn" data-element-type="button" data-element-id="btn-1776611707233-3d8mvric2" data-native-element="true">שלחו הודעה</a>
+          <a href="tel:0549702722" class="btn-secondary contact-intro-btn-secondary" data-element-type="button" data-element-id="btn-1776611707233-eb13w8h5m" data-native-element="true">
             <i class="fa fa-phone" aria-hidden="true"></i>
             <span>התקשרו עכשיו</span>
           </a>
@@ -812,7 +812,7 @@
       </div>
       <div class="contact-intro-image-block">
         <figure class="contact-intro-figure">
-          <img data-placeholder="contact-intro-image-1" data-context="A bright, clean professional office detail photograph with soft natural window light. A tidy desk with a laptop, a small notepad, a pen, and a cup of coffee. The mood is calm, organized, and professional — evoking a digital marketing strategy session. Muted warm tones, minimal clutter, editorial style." width="600" height="400" src="/assets/site-contact-intro-image-1.webp" alt="סביבת עבודה מקצועית ומסודרת — גלי שפיר שיווק דיגיטלי">
+          <img data-placeholder="contact-intro-image-1" data-context="A bright, clean professional office detail photograph with soft natural window light. A tidy desk with a laptop, a small notepad, a pen, and a cup of coffee. The mood is calm, organized, and professional — evoking a digital marketing strategy session. Muted warm tones, minimal clutter, editorial style." width="600" height="400" src="/assets/site-contact-intro-image-1.webp" alt="סביבת עבודה מקצועית ומסודרת — גלי שפיר שיווק דיגיטלי" data-element-type="image" data-element-id="img-1776611707238-19njg6tgx" >
         </figure>
         <div class="contact-intro-image-accent"></div>
       </div>
@@ -820,16 +820,16 @@
   </div>
 </section>
 
-<section class="contact-contact-methods-section" data-layout-spec="צור קשר-contact-methods" dir="rtl">
+<section class="contact-contact-methods-section" data-layout-spec="צור קשר-contact-methods" dir="rtl" id="contact-contact-methods-section">
   <div class="ccm-container">
     <div class="ccm-header">
       <h2 class="ccm-title">דרכי יצירת קשר</h2>
       <p class="ccm-subtitle">בחרו את הדרך הנוחה לכם — אשמח להכיר את העסק שלכם ולהציע את הפתרון הדיגיטלי המדויק עבורכם.</p>
     </div>
-    <div class="ccm-grid">
+    <div class="ccm-grid zappy-preserve-css-grid" id="zappy-auto-grid-1776611707251-pbk5it" data-zappy-auto-grid="true" data-zappy-grid-align="start" data-original-item-width="384" data-original-gap="24px" style="--zappy-grid-cols: repeat(2, minmax(0, 1fr)); display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: stretch !important;" data-zappy-explicit-columns="true">
 
       <!-- Card 1: Phone -->
-      <article class="ccm-card">
+      <article class="ccm-card" data-grid-item-index="0">
         <div class="ccm-card-icon-wrap">
           <svg data-element-type="icon" data-icon-type="svg" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.62 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 5.49 5.49l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path>
@@ -841,7 +841,7 @@
           <div class="ccm-divider"></div>
           <div class="ccm-contact-detail">
             <span class="ccm-detail-label">טלפון</span>
-            <a href="tel:[business_phone]" class="ccm-detail-value">[business_phone]</a>
+            <a href="tel:0549702722" class="ccm-detail-value">0549702722</a>
           </div>
           <div class="ccm-contact-detail">
             <span class="ccm-detail-label">זמינות</span>
@@ -855,7 +855,7 @@
       </article>
 
       <!-- Card 2: Email -->
-      <article class="ccm-card">
+      <article class="ccm-card" data-grid-item-index="1">
         <div class="ccm-card-icon-wrap">
           <svg data-element-type="icon" data-icon-type="svg" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
@@ -868,60 +868,26 @@
           <div class="ccm-divider"></div>
           <div class="ccm-contact-detail">
             <span class="ccm-detail-label">אימייל</span>
-            <a href="mailto:[business_email]" class="ccm-detail-value">[business_email]</a>
+            <a href="mailto:gali.shafir10@gmail.com" class="ccm-detail-value">gali.shafir10@gmail.com</a>
           </div>
           <div class="ccm-contact-detail">
-            <span class="ccm-detail-label">מתאים ל</span>
-            <span class="ccm-detail-value ccm-detail-text">שאלות מפורטות, בקשות הצעת מחיר</span>
+            
+            
           </div>
           <div class="ccm-response-badge">
             <i class="fa fa-clock-o" aria-hidden="true"></i>
-            <span>מענה תוך יום עסקים</span>
+            <span >מענה תוך יום עסקים</span>
           </div>
         </div>
       </article>
 
       <!-- Card 3: Business Inquiry -->
-      <article class="ccm-card ccm-card--accent">
-        <div class="ccm-card-icon-wrap">
-          <svg data-element-type="icon" data-icon-type="svg" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
-            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
-          </svg>
-        </div>
-        <div class="ccm-card-body">
-          <h3 class="ccm-card-title">פנייה עסקית</h3>
-          <p class="ccm-card-desc">מתמחה בשיווק דיגיטלי לעסקים מקצועיים — עורכי דין, מגשרים, הד הנטרים וחברות גיוס.</p>
-          <div class="ccm-divider"></div>
-          <ul class="ccm-inquiry-list">
-            <li>
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              <span>בניית אתר מקצועי ו-SEO</span>
-            </li>
-            <li>
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              <span>פרסום ממומן במטה</span>
-            </li>
-            <li>
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              <span>אסטרטגיה דיגיטלית כוללת</span>
-            </li>
-            <li>
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              <span>ייעוץ שיווקי לעסקים B2B</span>
-            </li>
-          </ul>
-          <div class="ccm-response-badge ccm-response-badge--accent">
-            <i class="fa fa-star" aria-hidden="true"></i>
-            <span>פגישת היכרות ללא עלות</span>
-          </div>
-        </div>
-      </article>
+      
 
     </div>
 
     <div class="ccm-footer-note">
-      <p>ניתן לפנות גם בוואטסאפ: <a href="https://wa.me/[whatsapp_handle]" target="_blank" rel="noopener noreferrer" class="ccm-footer-link">לחצו כאן לשיחה</a></p>
+      <p>ניתן לפנות גם בוואטסאפ: <a href="#" target="_blank" rel="noopener noreferrer" class="ccm-footer-link" style="display:none !important;">לחצו כאן לשיחה</a></p>
     </div>
   </div>
 </section>
@@ -996,17 +962,17 @@
         </ul>
         <div class="contact-form-section__divider" aria-hidden="true"></div>
         <div class="contact-form-section__contact-details">
-          <a href="mailto:[business_email]" class="contact-form-section__contact-link">
+          <a href="mailto:gali.shafir10@gmail.com" class="contact-form-section__contact-link">
             <span class="contact-form-section__contact-icon" aria-hidden="true">
               <svg data-element-type="icon" data-icon-type="svg" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="3" width="14" height="10" rx="1.5" stroke="currentColor" stroke-width="1.4"></rect><path d="M1.5 3.5l6.5 5 6.5-5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"></path></svg>
             </span>
-            <span>[business_email]</span>
+            <span>gali.shafir10@gmail.com</span>
           </a>
-          <a href="tel:[business_phone]" class="contact-form-section__contact-link">
+          <a href="tel:0549702722" class="contact-form-section__contact-link">
             <span class="contact-form-section__contact-icon" aria-hidden="true">
               <svg data-element-type="icon" data-icon-type="svg" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 1.5h3l1.5 3.5-1.75 1.25c.8 1.6 2 2.8 3.5 3.5L10.5 8 14 9.5v3A1.5 1.5 0 0112.5 14C6.7 14 2 9.3 2 3.5A1.5 1.5 0 013 2v-.5z" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path></svg>
             </span>
-            <span>[business_phone]</span>
+            <span>0549702722</span>
           </a>
         </div>
         <p class="contact-form-section__response-note">בדרך כלל מגיבים תוך יום עסקים אחד</p>
@@ -1078,42 +1044,33 @@
         <!-- Company Info -->
         <div class="footer-col footer-col--brand">
           <div class="footer-logo-wrap">
-            <img src="/assets/business-logo.webp" alt="גלי שפיר" class="logo" />
+            <img src="/assets/business-logo.webp" alt="גלי שפיר" class="logo" data-element-type="image" data-element-id="img-1776611675913-nxyigl44g" data-zappy-footer-image="true">
           </div>
           <p class="footer-tagline">אסטרטגיה דיגיטלית חדה. תוצאות מדידות. שותפות אמיתית.</p>
           <div class="footer-social">
-            <a href="[facebook_handle]" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="[instagram_handle]" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="[whatsapp_handle]" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="#" aria-label="Facebook" style="display:none !important;"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram" style="display:none !important;"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="WhatsApp" style="display:none !important;"><i class="fab fa-whatsapp"></i></a>
           </div>
         </div>
 
         <!-- Quick Links -->
         <div class="footer-col">
           <h4 class="footer-heading">ניווט מהיר</h4>
-          <ul class="footer-links">
-            <li><a href="/services">שירותים</a></li>
-            <li><a href="/industries">תעשיות</a></li>
-            <li><a href="/about">אודות</a></li>
-            <li><a href="/contact">צור קשר</a></li>
-          </ul>
+          <ul class="footer-links" ><li><a href="/services">שירותים</a></li><li><a href="/industries">תעשיות</a></li><li><a href="/about">אודות</a></li><li><a href="/contact">צור קשר</a></li></ul>
         </div>
 
         <!-- Contact Info -->
         <div class="footer-col">
           <h4 class="footer-heading">יצירת קשר</h4>
-          <ul class="footer-contact">
-            <li>
-              <span class="contact-icon"><i class="fas fa-envelope"></i></span>
-              <span class="contact-text"><a href="mailto:[business_email]">[business_email]</a></span>
-            </li>
-            <li>
-              <span class="contact-icon"><i class="fas fa-phone"></i></span>
-              <span class="contact-text"><a href="tel:[business_phone]">[business_phone]</a></span>
-            </li>
-            <li><a href="/"><span class="contact-icon"><i class="fas fa-map-marker-alt"></i></span>
-              <span class="contact-text">[business_address]</span></a></li>
-          </ul>
+          <ul class="footer-contact" ><li>
+              <span class="contact-icon"><i class="fas fa-envelope" data-element-type="icon" data-element-id="icon-1776611675912-4y3ut747s" data-icon-type="fontawesome" style="cursor: pointer;"></i></span>
+              <span class="contact-text"><a href="mailto:gali.shafir10@gmail.com">gali.shafir10@gmail.com</a></span>
+            </li><li>
+              <span class="contact-icon"><i class="fas fa-phone" data-element-type="icon" data-element-id="icon-1776611675912-krjjyfiwn" data-icon-type="fontawesome" style="cursor: pointer;"></i></span>
+              <span class="contact-text"><a href="tel:0549702722">0549702722</a></span>
+            </li><li><a href="/" ><span class="contact-icon"><i class="fas fa-map-marker-alt" style="cursor: pointer;"></i></span>
+              <span class="contact-text">&nbsp;כפר סבא, ישראל</span></a></li></ul>
         </div>
 
       </div>
